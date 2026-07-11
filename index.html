@@ -1,0 +1,2019 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026樹德科技大學華語文師資培訓 - 二語習得完整互動複習與檢核系統</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Noto Sans TC -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col md:flex-row overflow-hidden">
+
+<!-- Left Navigation Sidebar -->
+<aside class="w-full md:w-64 bg-slate-900 text-slate-100 flex-shrink-0 flex flex-col justify-between border-r border-slate-800 z-10">
+    <div>
+        <!-- Brand / Header -->
+        <div class="p-5 border-b border-slate-800 bg-slate-950">
+            <div class="flex items-center space-x-2">
+                <div class="p-2 bg-emerald-500 rounded-lg text-slate-950">
+                    <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-sm leading-tight text-white">樹德科技大學</h1>
+                    <p class="text-[10px] text-slate-400">華語文師資培訓計畫</p>
+                </div>
+            </div>
+            <div class="mt-4 px-3 py-1.5 bg-slate-800/60 rounded-md border border-slate-700/50 flex items-center justify-between">
+                <span class="text-[11px] text-slate-300">授課講師: <strong class="text-emerald-400">李永貞</strong></span>
+                <span class="text-[10px] bg-slate-700 text-slate-300 px-1.5 py-0.5 rounded">2026版</span>
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="p-4 space-y-1">
+            <button onclick="switchTab('slides')" id="nav-slides" class="nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-150 bg-emerald-500 text-slate-950 shadow-lg shadow-emerald-500/10">
+                <i data-lucide="book-open" class="w-4 h-4"></i>
+                <span>講義全內容導覽</span>
+            </button>
+            <button onclick="switchTab('diagnostic')" id="nav-diagnostic" class="nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-all duration-150">
+                <i data-lucide="activity" class="w-4 h-4"></i>
+                <span>偏誤中介語診斷</span>
+            </button>
+            <button onclick="switchTab('self-assess')" id="nav-self-assess" class="nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-all duration-150">
+                <i data-lucide="user-check" class="w-4 h-4"></i>
+                <span>風格與策略自評</span>
+            </button>
+            <button onclick="switchTab('builder')" id="nav-builder" class="nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-all duration-150">
+                <i data-lucide="layout" class="w-4 h-4"></i>
+                <span>SLA 教案設計器</span>
+            </button>
+            <button onclick="switchTab('exam')" id="nav-exam" class="nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-all duration-150 border-t border-slate-800/80 pt-4">
+                <i data-lucide="award" class="w-4 h-4 text-amber-400"></i>
+                <span class="text-amber-300 font-bold">認證專業模擬檢核</span>
+            </button>
+            <button onclick="switchTab('assistant')" id="nav-assistant" class="nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-all duration-150 border border-slate-800/40 mt-4 bg-emerald-950/10 hover:bg-emerald-950/30">
+                <i data-lucide="bot" class="w-4 h-4 text-emerald-400"></i>
+                <span class="text-emerald-300 font-semibold">SLA 互動 AI 助理</span>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Sidebar Footer -->
+    <div class="p-4 border-t border-slate-800 text-[11px] text-slate-500">
+        <p class="font-medium text-slate-400">第二語言習得研究講義</p>
+        <p class="mt-0.5">授課學校：樹德科技大學</p>
+        <div class="mt-2 flex space-x-2">
+            <a href="https://linktr.ee/huayucha" target="_blank" class="text-emerald-500 hover:underline">講師網頁</a>
+            <span>•</span>
+            <a href="mailto:laiyinhuayucha@gmail.com" class="hover:text-slate-300">聯絡信箱</a>
+        </div>
+    </div>
+</aside>
+
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-hidden h-screen">
+    
+    <!-- Top Bar -->
+    <header class="bg-white border-b border-slate-200 h-16 flex-shrink-0 flex items-center justify-between px-6 z-10">
+        <div class="flex items-center space-x-3">
+            <span class="text-[11px] bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-full font-semibold border border-emerald-100 flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> 樹德科大華語師培系統
+            </span>
+            <h2 id="top-title" class="text-base md:text-lg font-bold text-slate-800">講義全內容導覽</h2>
+        </div>
+        <div class="flex items-center space-x-2">
+            <button onclick="resetAllProgress()" class="text-xs text-slate-500 hover:text-slate-800 flex items-center space-x-1 px-3 py-1.5 hover:bg-slate-100 rounded-lg transition">
+                <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+                <span class="hidden sm:inline">重設所有數據</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Tab Panels Container -->
+    <div class="flex-1 overflow-y-auto p-4 md:p-6 bg-slate-50">
+
+        <!-- 1. Full Lecture Slides Panel -->
+        <section id="tab-slides" class="tab-panel space-y-6">
+            <!-- Unit Selection Header with Navigation Cards -->
+            <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-2xl p-6 text-white shadow-lg">
+                <div class="space-y-2">
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950/50 px-2.5 py-1 rounded-full border border-emerald-800/60 inline-block">講義 PDF 精華極速複習</span>
+                    <h3 class="text-xl md:text-2xl font-black">2026樹德科技大學華語文師資培訓計畫</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed max-w-4xl">
+                        授課講師：<strong>李永貞</strong>。本系統深度整合自 <strong>「2026樹德科技大學華語文師資培訓計畫_第二語言習得.pdf」</strong>，涵蓋核心基本議題、中介語、對比與偏誤分析及歷年教育部認證真題，請點選下方單元開始自修與複習。
+                    </p>
+                </div>
+                
+                <!-- Unit Tabs Selector Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2 mt-6">
+                    <button onclick="switchSlideUnit(1)" id="unit-tab-1" class="unit-tab-btn p-2.5 rounded-xl border text-[11px] font-bold transition-all text-center bg-white text-slate-900 shadow">1. 基本議題</button>
+                    <button onclick="switchSlideUnit(2)" id="unit-tab-2" class="unit-tab-btn p-2.5 rounded-xl border text-[11px] font-bold transition-all text-center bg-transparent text-slate-200 border-white/20 hover:bg-white/10">2. 重要理論</button>
+                    <button onclick="switchSlideUnit(3)" id="unit-tab-3" class="unit-tab-btn p-2.5 rounded-xl border text-[11px] font-bold transition-all text-center bg-transparent text-slate-200 border-white/20 hover:bg-white/10">3. 個別差異</button>
+                    <button onclick="switchSlideUnit(4)" id="unit-tab-4" class="unit-tab-btn p-2.5 rounded-xl border text-[11px] font-bold transition-all text-center bg-transparent text-slate-200 border-white/20 hover:bg-white/10">4. 發展階段</button>
+                    <button onclick="switchSlideUnit(5)" id="unit-tab-5" class="unit-tab-btn p-2.5 rounded-xl border text-[11px] font-bold transition-all text-center bg-transparent text-slate-200 border-white/20 hover:bg-white/10">5. 對比分析</button>
+                    <button onclick="switchSlideUnit(6)" id="unit-tab-6" class="unit-tab-btn p-2.5 rounded-xl border text-[11px] font-bold transition-all text-center bg-transparent text-slate-200 border-white/20 hover:bg-white/10">6. 偏誤分析</button>
+                    <button onclick="switchSlideUnit(7)" id="unit-tab-7" class="unit-tab-btn p-2.5 rounded-xl border text-[11px] font-bold transition-all text-center bg-transparent text-slate-200 border-white/20 hover:bg-white/10">7. 中介語論</button>
+                    <button onclick="switchSlideUnit(8)" id="unit-tab-8" class="unit-tab-btn p-2.5 rounded-xl border text-[11px] font-bold transition-all text-center bg-transparent text-slate-200 border-white/20 hover:bg-white/10">8. 課堂實踐</button>
+                </div>
+            </div>
+
+            <!-- UNIT 1: 第二語言習得的基本議題 (SLA Basics) -->
+            <div id="unit-content-1" class="unit-content bg-white rounded-2xl border border-slate-200 shadow-sm p-5 md:p-6 space-y-6">
+                <div class="flex items-center space-x-2.5 border-b border-slate-100 pb-3">
+                    <span class="p-1.5 bg-emerald-50 text-emerald-600 rounded-lg"><i data-lucide="help-circle" class="w-5 h-5"></i></span>
+                    <h4 class="text-base md:text-lg font-bold text-slate-900">單元 1：第二語言習得的基本議題 (1.1 - 1.4)</h4>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-xl space-y-2">
+                        <h5 class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full inline-block">1.1 SLA 核心關注</h5>
+                        <p class="text-xs text-slate-600 leading-relaxed">第二語言習得 (SLA) 探討人在母語之外學習另一種語言時，如何接觸輸入、注意形式、建立規則、使用語言、修正錯誤，並逐步發展出可溝通的語言系統。</p>
+                        <ul class="list-disc pl-4 text-[11px] text-slate-500 space-y-1">
+                            <li><strong>輸入不等於攝入 (Intake)：</strong>學生聽過很多次，未必會被注意與吸收。</li>
+                            <li><strong>陳述性轉程序性知識落差：</strong>「知道規則」與「脫口而出」有不同的自動化速度。</li>
+                            <li><strong>情意過濾器：</strong>焦慮與自信心會嚴重影響大腦語言處理核心運作。</li>
+                        </ul>
+                    </div>
+
+                    <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-xl space-y-2">
+                        <h5 class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full inline-block">1.2 第一與第二語言、外語與目的語</h5>
+                        <p class="text-xs text-slate-600 leading-relaxed">教師備課時，必須釐清環境中的語用與媒介語 (Medium of Instruction, MOI) 使用。不同習得機制決定了教學應在課內或課外延伸真實任務。</p>
+                        <div class="grid grid-cols-2 gap-2 text-[10px] text-slate-500 pt-1">
+                            <div><strong>第一語言 (L1)</strong>：最早習得、最具情感與認知基礎。</div>
+                            <div><strong>第二語言 (L2)</strong>：在目的語社會（如臺灣）大量使用，需高度社會性結合。</div>
+                            <div><strong>外語 (FL)</strong>：非目的語環境中，課堂為主要輸入管道。</div>
+                            <div><strong>媒介語 (MOI)</strong>：課堂輔助與管理語，不宜完全替代目的語輸入。</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto border border-slate-200 rounded-xl">
+                    <table class="w-full text-xs text-left">
+                        <thead class="bg-slate-100 text-slate-700 font-bold">
+                            <tr>
+                                <th class="p-3 border-r">比較項目</th>
+                                <th class="p-3 border-r">1.3 習得 (Acquisition)</th>
+                                <th class="p-3 border-r">1.3 學習 (Learning)</th>
+                                <th class="p-3">1.4 知識與自動化之轉換</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-slate-600">
+                            <tr>
+                                <td class="p-3 font-semibold bg-slate-50/50 border-r">意識程度</td>
+                                <td class="p-3 border-r">隱性、自然、無意識地形成，常無法精確口頭陳述規則。</td>
+                                <td class="p-3 border-r">顯性、有意識地理解文法規則、記取特定形式與明示教學。</td>
+                                <td class="p-3" rowspan="3">
+                                    <strong class="text-indigo-800 block mb-1">陳述性知識 (Declarative)</strong>
+                                    知道規則：能口頭背誦出「把字句」或「了」的文法公式。
+                                    <strong class="text-indigo-800 block mt-3 mb-1">程序性知識 (Procedural)</strong>
+                                    操作熟練：在真實溝通語境下不假思索地在對話中使用。
+                                    <strong class="text-indigo-800 block mt-3 mb-1">自動化 (Automation)</strong>
+                                    不佔用工作記憶負荷，可達到即時語言處理的高流暢性。
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold bg-slate-50/50 border-r">課堂來源</td>
+                                <td class="p-3 border-r">大量可理解輸入、語義協商互動、以及真實性交際任務。</td>
+                                <td class="p-3 border-r">結構化語法演繹講解、機械型替換操練。</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold bg-slate-50/50 border-r">典型證據</td>
+                                <td class="p-3 border-r">能在不設防之自然日常交際與複雜任务中流暢使用。</td>
+                                <td class="p-3 border-r">能在紙筆測驗中完美完成選擇題、句子改錯與翻譯題。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- UNIT 2: 第二語言習得重要理論 (SLA Theories) -->
+            <div id="unit-content-2" class="unit-content bg-white rounded-2xl border border-slate-200 shadow-sm p-5 md:p-6 space-y-6 hidden">
+                <div class="flex items-center space-x-2.5 border-b border-slate-100 pb-3">
+                    <span class="p-1.5 bg-emerald-50 text-emerald-600 rounded-lg"><i data-lucide="database" class="w-5 h-5"></i></span>
+                    <h4 class="text-base md:text-lg font-bold text-slate-900">單元 2：第二語言習得重要理論 (1.5 - 1.14)</h4>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-xl space-y-3">
+                        <h5 class="text-xs font-bold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded-full inline-block">1.5 - 1.7 行為、認知與先天論</h5>
+                        <p class="text-[11px] text-slate-600 leading-relaxed"><strong>行為主義</strong>：刺激-反應-強化。提倡機械式語調模仿與句型反覆操練以防病句石化，但難以解釋兒童或二語學習者的語言創造性。</p>
+                        <p class="text-[11px] text-slate-600 leading-relaxed"><strong>認知學派</strong>：主動建構。學習者主動處理輸入、在心智中進行規則對比並驗證假設，最後將新形式同化至個人圖式中。</p>
+                        <p class="text-[11px] text-slate-600 leading-relaxed"><strong>先天論 (UG/LAD)</strong>：Chomsky 普遍語法。人類具與生俱來的語言習得裝置，靠語言參數設定衍生無限句子。</p>
+                    </div>
+
+                    <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-xl space-y-3">
+                        <h5 class="text-xs font-bold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded-full inline-block">1.8 Krashen 五大假說</h5>
+                        <ul class="text-[11px] text-slate-600 space-y-2">
+                            <li><strong>1. 習得-學習假說</strong>：習得與學習是不同管道。前者才是發展溝通能力的核心。</li>
+                            <li><strong>2. 自然順序假說</strong>：二語法項目的發展有相對固定的客觀次序。</li>
+                            <li><strong>3. 監控假說</strong>：學習到的顯性規則僅起輔助監控與修改作用。</li>
+                            <li><strong>4. 輸入假說 (i+1)</strong>：略高於目前程度且可理解的輸入是進步的唯一源泉。</li>
+                            <li><strong>5. 情意過濾假說</strong>：高度焦慮與低動機會阻斷輸入被大腦語言裝置攝入。</li>
+                        </ul>
+                    </div>
+
+                    <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-xl space-y-3">
+                        <h5 class="text-xs font-bold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded-full inline-block">1.9 - 1.10 互動與輸出假說</h5>
+                        <div class="space-y-2">
+                            <div>
+                                <span class="text-[10px] bg-indigo-100 text-indigo-800 font-bold px-1.5 py-0.5 rounded">Long 語義協商 (Negotiation of Meaning)</span>
+                                <p class="text-[11px] text-slate-500 mt-1">互動受阻時，透過<strong>理解核實、確認核實、要求澄清、重複疑問</strong>等方式共同調整輸入，促成習得。</p>
+                            </div>
+                            <div>
+                                <span class="text-[10px] bg-indigo-100 text-indigo-800 font-bold px-1.5 py-0.5 rounded">Swain 推動輸出 (Pushed Output)</span>
+                                <p class="text-[11px] text-slate-500 mt-1">輸出迫使學習者<strong>注意到語言缺口、檢驗假設、提升文法加工精確度</strong>。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-slate-100 pt-4">
+                    <div class="p-4 bg-indigo-950 text-indigo-100 rounded-xl space-y-2">
+                        <h5 class="text-xs font-bold text-emerald-400">1.11 Schmidt 注意力假說</h5>
+                        <p class="text-[11px] leading-relaxed">沒有注意到語言形式，輸入就不會轉化為攝入。教師可透過以下方式引導注意：</p>
+                        <div class="text-[10px] text-indigo-300 space-y-1">
+                            <li><strong>輸入強化</strong>：在文本或圖表上以粗體、底線、高亮突出語法點。</li>
+                            <li><strong>對比例句</strong>：並列「我去了台北」與「我去過台北」辨義。</li>
+                            <li><strong>意識提升任務</strong>：給予多個例句，引導學生自主發現規則。</li>
+                            <li><strong>輸出後回看</strong>：在任務完成後，共同分析剛才的生詞與偏誤。</li>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-xl space-y-2">
+                        <h5 class="text-xs font-bold text-slate-800">1.12 McLaughlin 注意力處理模式</h5>
+                        <p class="text-[11px] text-slate-600 leading-relaxed">將認知資源分為「受控處理 (Controlled)」與「自動處理 (Automatic)」，以及「焦點注意力 (Focal)」與「邊緣注意力 (Peripheral)」。</p>
+                        <div class="grid grid-cols-2 gap-1 text-[9px] text-slate-500">
+                            <div class="bg-white p-1 rounded border"><strong>受控+焦點</strong>：精讀課上分析不熟悉語法的特定規律。</div>
+                            <div class="bg-white p-1 rounded border"><strong>受控+邊緣</strong>：討論租屋任務，主要心思在解決溝通，但仍需偶爾思考量詞搭配。</div>
+                            <div class="bg-white p-1 rounded border"><strong>自動+焦點</strong>：作文改錯時，專門尋找「了」或「把」的漏用。</div>
+                            <div class="bg-white p-1 rounded border"><strong>自動+邊緣</strong>：高度流暢，在自然對話中快速表達問答與交際。</div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-slate-50 border border-slate-200/60 rounded-xl space-y-2">
+                        <h5 class="text-xs font-bold text-slate-800">1.13 - 1.14 社會文化與文化適應</h5>
+                        <p class="text-[11px] text-slate-600 leading-relaxed"><strong>Vygotsky 社會文化理論</strong>：學習是社會實踐過程。<strong>近側發展區 (ZPD)</strong> 為學生能獨立完成與在鷹架協助下能完成之間的區間。教師需提供並逐步撤除<strong>鷹架 (Scaffolding)</strong>。</p>
+                        <p class="text-[11px] text-slate-600 leading-relaxed"><strong>Schumann 文化適應模式</strong>：社會距離與心理距離決定二語習得最終成功高度與石化可能。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT 3: 學習者分析與個別差異 (Learner Profiles) -->
+            <div id="unit-content-3" class="unit-content bg-white rounded-2xl border border-slate-200 shadow-sm p-5 md:p-6 space-y-6 hidden">
+                <div class="flex items-center space-x-2.5 border-b border-slate-100 pb-3">
+                    <span class="p-1.5 bg-emerald-50 text-emerald-600 rounded-lg"><i data-lucide="users" class="w-5 h-5"></i></span>
+                    <h4 class="text-base md:text-lg font-bold text-slate-900">單元 3：學習者分析與個別差異 (2.1 - 2.16)</h4>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="space-y-4">
+                        <h5 class="text-xs font-extrabold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
+                            <i data-lucide="baby" class="w-4 h-4 text-emerald-500"></i> 2.1 - 2.3 認知能力與動機
+                        </h5>
+                        <div class="bg-slate-50 p-4 rounded-xl space-y-3 text-xs text-slate-600">
+                            <div>
+                                <strong class="text-slate-800">年齡差異：</strong>
+                                <span class="block text-[11px] text-slate-500 mt-0.5">兒童在語音模仿與隱性學習具優勢；成人在抽象規則理解、後設認知較成熟，但受發音定型與高焦慮限制。</span>
+                            </div>
+                            <div>
+                                <strong class="text-slate-800">動機類型：</strong>
+                                <div class="grid grid-cols-2 gap-2 text-[10px] text-slate-500 mt-1">
+                                    <div class="bg-white p-1.5 rounded"><strong>工具型 (Instrumental)</strong>：為了就職、考試升學、簽證。</div>
+                                    <div class="bg-white p-1.5 rounded"><strong>整合型 (Integrative)</strong>：想與臺灣朋友交流、認同並融入社會。</div>
+                                </div>
+                            </div>
+                            <div>
+                                <strong class="text-slate-800">工作記憶與音韻編碼：</strong>
+                                <span class="block text-[11px] text-slate-500 mt-0.5">學習能力 (Aptitude) 包含音韻敏感度與工作記憶長度。當長句聽不完時，教師應「拆開負擔、分段輸入、降低認知負荷」。</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h5 class="text-xs font-extrabold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
+                            <i data-lucide="clipboard-list" class="w-4 h-4 text-emerald-500"></i> 2.5 - 2.7 Oxford 學習與溝通策略
+                        </h5>
+                        <div class="bg-slate-50 p-4 rounded-xl space-y-3 text-xs text-slate-600">
+                            <div>
+                                <strong class="text-indigo-700">直接策略：</strong>
+                                <span class="block text-[11px] text-slate-500 mt-0.5"><strong>記憶</strong>（圖像/部件聯想）、<strong>認知</strong>（課文摘要、分析句子）、<strong>補償</strong>（猜詞、手勢、迂迴說明）。</span>
+                            </div>
+                            <div>
+                                <strong class="text-indigo-700">間接策略：</strong>
+                                <span class="block text-[11px] text-slate-500 mt-0.5"><strong>後設認知</strong>（計畫與自我監控、自我糾錯）、<strong>情意</strong>（自我鼓勵）、<strong>社會</strong>（向母語者確認、協同合作）。</span>
+                            </div>
+                            <div class="border-t border-slate-200 pt-2">
+                                <strong class="text-rose-600">迴避策略 (Avoidance)：</strong>
+                                <span class="block text-[11px] text-slate-500 mt-0.5">學習者為了保持句子正確度、逃避犯錯焦慮，刻意避開新學的複雜語法結構（如「A比B」、「把字句」），只寫簡單主謂賓口語句。表面正確，但限制了中介語之成長。</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h5 class="text-xs font-extrabold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
+                            <i data-lucide="compass" class="w-4 h-4 text-emerald-500"></i> 2.8 - 2.16 學習風格流派對照
+                        </h5>
+                        <div class="bg-slate-50 p-4 rounded-xl space-y-2.5 text-[11px] text-slate-600 max-h-[300px] overflow-y-auto">
+                            <div>
+                                <strong class="text-slate-800">Kolb 經驗學習與 LSI：</strong>
+                                <span class="text-slate-500 block">具體經驗、反思觀察、抽象概念、主動實驗。分為：發散型、同化型、聚斂型、適應型。</span>
+                            </div>
+                            <div>
+                                <strong class="text-slate-800">場依存 vs. 場獨立 (Witkin)：</strong>
+                                <span class="text-slate-500 block">場獨立者偏好分析細節、獨立解題；場依存者偏好整體背景、人際互動。</span>
+                            </div>
+                            <div>
+                                <strong class="text-slate-800">VARK 感官偏好：</strong>
+                                <span class="text-slate-500 block">Visual（視覺圖示）、Auditory（聽覺）、Read/Write（讀寫）、Kinesthetic（動覺/TPR）。</span>
+                            </div>
+                            <div>
+                                <strong class="text-slate-800">批判性使用原則：</strong>
+                                <span class="text-slate-500 block">不宜將風格當成學生的「能力高低或人格標籤」，教學應多元化，平衡講解與操作。</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT 4: 學習與習得發展五階段 (SLA Adaptation Stages) -->
+            <div id="unit-content-4" class="unit-content bg-white rounded-2xl border border-slate-200 shadow-sm p-5 md:p-6 space-y-6 hidden">
+                <div class="flex items-center space-x-2.5 border-b border-slate-100 pb-3">
+                    <span class="p-1.5 bg-emerald-50 text-emerald-600 rounded-lg"><i data-lucide="trending-up" class="w-5 h-5"></i></span>
+                    <h4 class="text-base md:text-lg font-bold text-slate-900">單元 4：學習者二語發展與文化適應五階段 (2.4)</h4>
+                </div>
+
+                <!-- Interactive 5 Stages of SLA Adaptation -->
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-2">
+                    <button onclick="showFullStage(1)" id="f-stage-btn-1" class="f-stage-btn p-3 rounded-xl border text-center transition bg-emerald-500 text-white border-emerald-500 font-semibold text-xs">
+                        1. 蜜月階段
+                    </button>
+                    <button onclick="showFullStage(2)" id="f-stage-btn-2" class="f-stage-btn p-3 rounded-xl border text-center transition bg-white text-slate-700 border-slate-200 hover:bg-slate-50 text-xs">
+                        2. 文化衝擊
+                    </button>
+                    <button onclick="showFullStage(3)" id="f-stage-btn-3" class="f-stage-btn p-3 rounded-xl border text-center transition bg-white text-slate-700 border-slate-200 hover:bg-slate-50 text-xs">
+                        3. 初步適應
+                    </button>
+                    <button onclick="showFullStage(4)" id="f-stage-btn-4" class="f-stage-btn p-3 rounded-xl border text-center transition bg-white text-slate-700 border-slate-200 hover:bg-slate-50 text-xs">
+                        4. 心理孤立
+                    </button>
+                    <button onclick="showFullStage(5)" id="f-stage-btn-5" class="f-stage-btn p-3 rounded-xl border text-center transition bg-white text-slate-700 border-slate-200 hover:bg-slate-50 text-xs">
+                        5. 融合整合
+                    </button>
+                </div>
+
+                <!-- Stage Detail Display Card -->
+                <div id="f-stage-card" class="bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span id="f-stage-title" class="text-sm md:text-base font-bold text-indigo-700">第一階段：蜜月階段 (Honeymoon Period)</span>
+                        <span id="f-stage-badge" class="text-xs bg-indigo-100 text-indigo-700 px-2.5 py-1 rounded-full font-semibold">學習初期</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs mt-2">
+                        <div class="bg-white p-4 rounded-xl border border-slate-200/50">
+                            <strong class="text-slate-800">學生心理與交際狀態特徵：</strong>
+                            <p id="f-stage-desc" class="text-slate-600 mt-1.5 leading-relaxed">對新語言與環境充滿強烈好奇心與熱情，願意模仿跟讀，簡單日常句子進步很快。興奮自信度高，焦慮感尚未浮現。容易因為新鮮感而進步很快，但尚未建立自主、穩定的學習方式與系統性習慣。</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200/50">
+                            <strong class="text-slate-800">華語教師核心處理對策：</strong>
+                            <p id="f-stage-action" class="text-slate-600 mt-1.5 leading-relaxed">建立固定 learning flow 與自主自學策略。多給予清楚、短小、可即時與環境對接的高頻語塊輸入（例如點餐：我要一杯珍珠奶茶，不宜在初期大講複雜的名詞組屈折結構）。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT 5: 對比分析 (Contrastive Analysis) -->
+            <div id="unit-content-5" class="unit-content bg-white rounded-2xl border border-slate-200 shadow-sm p-5 md:p-6 space-y-6 hidden">
+                <div class="flex items-center space-x-2.5 border-b border-slate-100 pb-3">
+                    <span class="p-1.5 bg-emerald-50 text-emerald-600 rounded-lg"><i data-lucide="columns" class="w-5 h-5"></i></span>
+                    <h4 class="text-base md:text-lg font-bold text-slate-900">單元 5：對比分析：從母語差異預測教學難點 (3.1 - 3.6)</h4>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-600">
+                    <div class="p-4 bg-slate-50 rounded-xl space-y-2">
+                        <strong class="text-slate-800 text-xs block">3.1 - 3.2 對比分析假說與步驟</strong>
+                        <p class="leading-relaxed">基於行為主義與結構主義，認為母語與目的語相同處產生<strong>正遷移 (Positive Transfer)</strong>，相異處產生<strong>負遷移 (Negative Transfer)</strong>造成偏誤。</p>
+                        <div class="text-[10px] text-slate-500 pt-1">
+                            <div><strong>強勢假設</strong>：對比分析能完全預測大部分學習困難與偏誤。</div>
+                            <div><strong>弱勢假設</strong>：對比主要用來在事後解釋已被觀察到的偏誤原因。</div>
+                            <div><strong>適中假設</strong>：細微差異常比巨大差異更難掌握。</div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-slate-50 rounded-xl space-y-2">
+                        <strong class="text-slate-800 text-xs block">3.3 語音對比分析</strong>
+                        <div class="space-y-1.5 text-[11px] text-slate-500">
+                            <div><strong>英語母語</strong>：不以聲調辨義、送氣/不送氣塞音對立、捲舌音。</div>
+                            <div><strong>日語母語</strong>：ㄢ/ㄤ與ㄥ之鼻音尾辨別、輕聲、聲調連讀語流。</div>
+                            <div><strong>韓語母語</strong>：ㄈ、ㄖ之擦音、舌尖後音對應。</div>
+                            <div><strong>越南語母語</strong>：調類與調值音高走勢不同。</div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-slate-50 rounded-xl space-y-2">
+                        <strong class="text-slate-800 text-xs block">3.5 詞彙與語用對比</strong>
+                        <div class="space-y-1.5 text-[11px] text-slate-500">
+                            <div><strong>同形假朋友</strong>：日文「勉強（學習）」與中文「勉強」異義。</div>
+                            <div><strong>直接語用行為</strong>：直譯拒絕說「不要」，語用過於生硬，需教「不好意思，我明天可能沒辦法...」。</div>
+                            <div><strong>稱讚回應</strong>：直譯謙虛「哪裡哪裡」已不適用所有日常。</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto border border-slate-200 rounded-xl">
+                    <table class="w-full text-xs text-left">
+                        <thead class="bg-slate-100 font-bold">
+                            <tr>
+                                <th class="p-3">3.4 語法項目</th>
+                                <th class="p-3">常見跨語言差異</th>
+                                <th class="p-3">典型中介語偏誤</th>
+                                <th class="p-3">教師教學與診斷重點</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-slate-600">
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-900">量詞系統</td>
+                                <td class="p-3">英語無華語名量詞系統，印歐語多只用數詞。</td>
+                                <td class="p-3 text-rose-600">*一書、*一個年、*三個咖啡。</td>
+                                <td class="p-3">量詞非裝飾词，需與名詞特徵、實物及語體搭配。</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-900">時貌助詞 了/過/著</td>
+                                <td class="p-3">華語不以動詞屈折表示時態，助詞表示事件完成/經驗/狀態觀點。</td>
+                                <td class="p-3 text-rose-600">*我昨天去了學校三年。*我很開心了。</td>
+                                <td class="p-3">不能簡化對等為英文 past tense。用事件觀與情境對比。</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-900">地點時間語序</td>
+                                <td class="p-3">英語為 S + V + O + PP；華語時間地點狀語常在動詞前。</td>
+                                <td class="p-3 text-rose-600">*我吃飯在餐廳。*我去台北明天。</td>
+                                <td class="p-3">建立「誰 + 什麼時候 + 在哪裡 + 做什麼」固定框。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- UNIT 6: 偏誤分析 (Error Analysis) -->
+            <div id="unit-content-6" class="unit-content bg-white rounded-2xl border border-slate-200 shadow-sm p-5 md:p-6 space-y-6 hidden">
+                <div class="flex items-center space-x-2.5 border-b border-slate-100 pb-3">
+                    <span class="p-1.5 bg-emerald-50 text-emerald-600 rounded-lg"><i data-lucide="alert-triangle" class="w-5 h-5"></i></span>
+                    <h4 class="text-base md:text-lg font-bold text-slate-900">單元 6：偏誤分析與回饋決策 (4.1 - 4.5)</h4>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3">
+                        <strong class="text-slate-800 text-xs block">4.1 核心觀念：失誤 (Mistake) vs. 偏誤 (Error)</strong>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            <strong>失誤 (Mistake)</strong>：偶發、在壓力/疲勞時產生，學習者「能自我修正」。<br>
+                            <strong>偏誤 (Error)</strong>：系統性、反覆出現，反映學習者對語法規則「尚未習得」。
+                        </p>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            <strong>全局性錯誤 (Global Error)</strong>：嚴重破壞整句結構與理解。<br>
+                            <strong>局部性錯誤 (Local Error)</strong>：不影響全句大意理解（如量詞選錯）。
+                        </p>
+                    </div>
+
+                    <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3">
+                        <strong class="text-slate-800 text-xs block">4.2 偏誤分析的經典標準流程</strong>
+                        <div class="grid grid-cols-2 gap-2 text-[10px] text-slate-500">
+                            <div class="bg-white p-1.5 rounded"><strong>1. 蒐集語料</strong>：口語錄音、作文。</div>
+                            <div class="bg-white p-1.5 rounded"><strong>2. 辨認錯誤</strong>：找出不符語境得體之處。</div>
+                            <div class="bg-white p-1.5 rounded"><strong>3. 描述錯誤</strong>：分類為遺漏、誤加等。</div>
+                            <div class="bg-white p-1.5 rounded"><strong>4. 解釋來源</strong>：分析母語、過度類化成因。</div>
+                            <div class="bg-white p-1.5 rounded"><strong>5. 評估嚴重性</strong>：是否影響溝通。</div>
+                            <div class="bg-white p-1.5 rounded"><strong>6. 設計再教學</strong>：將共通偏誤納入下堂課。</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-4 border-t border-slate-100">
+                    <div class="space-y-2">
+                        <h5 class="text-xs font-bold text-slate-800">4.3 偏誤表層策略分類 (Surface Taxonomy)</h5>
+                        <div class="grid grid-cols-2 gap-2 text-[11px]">
+                            <div class="p-2.5 bg-slate-100/50 rounded-xl"><strong>遺漏 (Omission)</strong>：*我昨天去學校買書。(漏「了」)</div>
+                            <div class="p-2.5 bg-slate-100/50 rounded-xl"><strong>誤加 (Addition)</strong>：*他很非常高興。</div>
+                            <div class="p-2.5 bg-slate-100/50 rounded-xl"><strong>誤選 (Misselection)</strong>：*他長得高也加上帥。</div>
+                            <div class="p-2.5 bg-slate-100/50 rounded-xl"><strong>錯序 (Misordering)</strong>：*我吃飯在餐廳。</div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h5 class="text-xs font-bold text-slate-800">4.4 偏誤深層原因分類 (Deep Causes)</h5>
+                        <div class="grid grid-cols-2 gap-2 text-[11px]">
+                            <div class="p-2.5 bg-slate-100/50 rounded-xl"><strong>語際遷移</strong>：母語負遷移影響（直譯結構）。</div>
+                            <div class="p-2.5 bg-slate-100/50 rounded-xl"><strong>語內遷移</strong>：過度推廣規則（如造出「*一個年」）。</div>
+                            <div class="p-2.5 bg-slate-100/50 rounded-xl"><strong>發展性偏誤</strong>：自然過渡階段（各國生共通簡化）。</div>
+                            <div class="p-2.5 bg-slate-100/50 rounded-xl col-span-2"><strong>教學誘發 (Training-induced)</strong>：教材、教師說明的過度簡化造成誤解。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UNIT 7: 中介語分析 (Interlanguage) -->
+            <div id="unit-content-7" class="unit-content bg-white rounded-2xl border border-slate-200 shadow-sm p-5 md:p-6 space-y-6 hidden">
+                <div class="flex items-center space-x-2.5 border-b border-slate-100 pb-3">
+                    <span class="p-1.5 bg-emerald-50 text-emerald-600 rounded-lg"><i data-lucide="layers" class="w-5 h-5"></i></span>
+                    <h4 class="text-base md:text-lg font-bold text-slate-900">單元 7：中介語分析與發展心理歷程 (5.1 - 5.5)</h4>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+                    <div class="space-y-3 p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <strong class="text-slate-800 text-xs block">5.1 中介語五大核心特徵</strong>
+                        <ul class="space-y-1.5 text-slate-600 list-disc pl-4">
+                            <li><strong>系統性</strong>：偏誤非隨機，背後存在學習者自行建構的一套運作規律。</li>
+                            <li><strong>可變性</strong>：受情意、情境與即時負荷影響（填空對，口語錯）。</li>
+                            <li><strong>動態性</strong>：隨時在吸收新輸入與接受回饋中變動演進。</li>
+                            <li><strong>反覆性</strong>：已修正的規則，在高度壓力或複雜語境中會再退回原形。</li>
+                            <li><strong>石化可能性 (Fossilization)</strong>：若失去溝通修正張力，偏誤會高度自動化固定。</li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-3 p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        <strong class="text-slate-800 text-xs block">5.2 Selinker 五大心理語言歷程</strong>
+                        <ol class="space-y-1 text-slate-600 list-decimal pl-4">
+                            <li><strong>語言遷移 (Language transfer)</strong>：母語負遷移。</li>
+                            <li><strong>訓練遷移 (Transfer of training)</strong>：因教材、教法不當或過度簡化所誘發的偏誤。</li>
+                            <li><strong>二語學習策略</strong>：採取簡化、避繁就簡。</li>
+                            <li><strong>二語溝通策略</strong>：為維持溝通順利而採取的補償。</li>
+                            <li><strong>目的語過度類化 (Overgeneralization)</strong>：目的語規則擴大推導。</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-indigo-50 border border-indigo-100 rounded-xl space-y-2 text-xs">
+                    <h5 class="font-bold text-indigo-900 flex items-center gap-1.5"><i data-lucide="refresh-cw" class="w-4 h-4 text-indigo-600"></i> 5.3 中介語與 U 型發展</h5>
+                    <p class="text-indigo-800 leading-relaxed">
+                        語言進步並非直線！<strong>階段一：語塊記憶階段</strong>，靠背誦完整句子（錯誤極少） -> <strong>階段二：規則建立與自我生成階段</strong>，開始自己拼裝句型（錯誤暴增，看似退步，實則代表規則建構開始運作） -> <strong>階段三：規則修正階段</strong>，系統逐步趨於目標語穩定（錯誤減少）。
+                    </p>
+                </div>
+            </div>
+
+            <!-- UNIT 8: 課堂轉化與任務設計 -->
+            <div id="unit-content-8" class="unit-content bg-white rounded-2xl border border-slate-200 shadow-sm p-5 md:p-6 space-y-6 hidden">
+                <div class="flex items-center space-x-2.5 border-b border-slate-100 pb-3">
+                    <span class="p-1.5 bg-emerald-50 text-emerald-600 rounded-lg"><i data-lucide="smile" class="w-5 h-5"></i></span>
+                    <h4 class="text-base md:text-lg font-bold text-slate-900">單元 8：SLA 轉化華語課堂、備課與任務設計 (6.1 - 7.6)</h4>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-slate-600">
+                    <div class="p-4 bg-slate-50 border border-slate-100 rounded-xl space-y-2">
+                        <strong class="text-slate-800 block">6.2 教師語言 (Teacher Talk) 調整控制</strong>
+                        <p class="leading-relaxed">教師說話量 (TTT) 應減少，保留給學生練習。調整包含：關鍵處放慢、語塊間停頓但發音語調自然、用已知詞與手勢圖示輔助，少用未教抽象詞與全程翻譯。</p>
+                        
+                        <strong class="text-slate-800 block pt-2">6.3 任務輸出設計類型</strong>
+                        <ul class="list-disc pl-4 text-slate-500 space-y-1">
+                            <li><strong>資訊差任務</strong>：地圖尋寶問路（雙方資訊不對等產生真溝通）。</li>
+                            <li><strong>排序與序列任務</strong>：做菜、排定流程（連結「先、再、然後」）。</li>
+                            <li><strong>問題解決任務</strong>：預算有限，討論租屋與手機選購。</li>
+                            <li><strong>角色扮演</strong>：看病、請假、與房東溝通（融入語用語境）。</li>
+                        </ul>
+                    </div>
+
+                    <div class="p-4 bg-slate-50 border border-slate-100 rounded-xl space-y-3">
+                        <strong class="text-slate-800 block">7.6 口語與寫作表現進階支架 (Scaffolding)</strong>
+                        <div class="space-y-2 text-[11px] text-slate-500">
+                            <div>
+                                <span class="bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded">1. 描述層面</span>
+                                <span class="block mt-0.5">教人事時地物基礎敘述，給予 5W1H 框架支架。</span>
+                            </div>
+                            <div>
+                                <span class="bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded">2. 說明層面</span>
+                                <span class="block mt-0.5">解釋原因與方法步驟，給予「因為、所以、首先、接著」句型。</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Diagnostic Playground Panel -->
+        <section id="tab-diagnostic" class="tab-panel hidden space-y-6">
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 space-y-4">
+                <div class="flex items-center space-x-3 border-b border-slate-100 pb-3">
+                    <div class="p-1.5 bg-indigo-50 text-indigo-600 rounded-lg"><i data-lucide="stethoscope" class="w-5 h-5"></i></div>
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900">偏誤與中介語診斷室 (Interactive Case Studies)</h4>
+                        <p class="text-xs text-slate-500">身為華語教師，請為下列真實學生偏誤案例做出精準診斷與回饋決策。</p>
+                    </div>
+                </div>
+
+                <!-- Case Selection Sidebar inside Playground -->
+                <div class="flex flex-col lg:flex-row gap-6">
+                    <div class="w-full lg:w-1/3 space-y-2">
+                        <span class="text-xs font-bold text-slate-500 block mb-1 uppercase tracking-wider">選擇診斷案例</span>
+                        <div id="cases-list" class="space-y-1.5">
+                            <!-- Populated Dynamically via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Sandbox Workspace -->
+                    <div class="flex-1 bg-slate-50 rounded-2xl border border-slate-200 p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs bg-slate-200 text-slate-800 px-2 py-1 rounded font-semibold" id="sandbox-lang">學習者背景: 英語母語者</span>
+                            <span class="text-xs bg-rose-100 text-rose-700 px-2 py-1 rounded font-semibold" id="sandbox-severity">難度/級別: 中級偏誤</span>
+                        </div>
+
+                        <!-- Target Sentence Display -->
+                        <div class="bg-white rounded-xl border border-slate-100 p-4 shadow-sm text-center">
+                            <span class="text-xs text-slate-400 block mb-1">學生寫出/說出的錯句：</span>
+                            <h3 class="text-xl font-bold text-rose-600 py-2" id="sandbox-sentence">「*我吃飯在餐廳。」</h3>
+                            <p class="text-xs text-slate-500" id="sandbox-meaning">正確對應：「我在餐廳吃飯。」</p>
+                        </div>
+
+                        <!-- Form Steps -->
+                        <div class="space-y-4">
+                            <!-- Q1: Surface Error Taxonomy -->
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1.5">步驟一、描述錯誤（表層策略分類）：</label>
+                                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="ans-surface-group">
+                                    <button onclick="selectDiag('surface', '遺漏')" class="diag-opt py-2 px-3 rounded-xl border text-xs text-center transition bg-white border-slate-200">遺漏 (Omission)</button>
+                                    <button onclick="selectDiag('surface', '誤加')" class="diag-opt py-2 px-3 rounded-xl border text-xs text-center transition bg-white border-slate-200">誤加 (Addition)</button>
+                                    <button onclick="selectDiag('surface', '錯序')" class="diag-opt py-2 px-3 rounded-xl border text-xs text-center transition bg-white border-slate-200">錯序 (Misordering)</button>
+                                    <button onclick="selectDiag('surface', '誤選')" class="diag-opt py-2 px-3 rounded-xl border text-xs text-center transition bg-white border-slate-200">誤選 (Misselection)</button>
+                                </div>
+                            </div>
+
+                            <!-- Q2: Deep Cause -->
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1.5">步驟二、診斷成因（深層原因歸類）：</label>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2" id="ans-deep-group">
+                                    <button onclick="selectDiag('deep', '語際遷移')" class="diag-opt py-2 px-3 rounded-xl border text-xs text-left transition bg-white border-slate-200">語際遷移（母語負遷移影響）</button>
+                                    <button onclick="selectDiag('deep', '語內遷移')" class="diag-opt py-2 px-3 rounded-xl border text-xs text-left transition bg-white border-slate-200">語內遷移（規則過度泛化）</button>
+                                    <button onclick="selectDiag('deep', '教學誘發')" class="diag-opt py-2 px-3 rounded-xl border text-xs text-left transition bg-white border-slate-200">教學誘發（教材/說明造成）</button>
+                                </div>
+                            </div>
+
+                            <!-- Q3: Feedback strategy -->
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1.5">步驟三、回饋策略（選擇最合適之處置）：</label>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2" id="ans-feedback-group">
+                                    <button onclick="selectDiag('feedback', '重述')" class="diag-opt py-2 px-3 rounded-xl border text-xs text-left transition bg-white border-slate-200"><strong>重述 (Recast)：</strong>「喔！你在餐廳吃飯啊。」</button>
+                                    <button onclick="selectDiag('feedback', '提示')" class="diag-opt py-2 px-3 rounded-xl border text-xs text-left transition bg-white border-slate-200"><strong>提示 (Elicitation)：</strong>「地點要在動詞的前面還是後面？」</button>
+                                    <button onclick="selectDiag('feedback', '後設語言')" class="diag-opt py-2 px-3 rounded-xl border text-xs text-left transition bg-white border-slate-200"><strong>後設語言回饋：</strong>說明地點短語結構功能。</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Check Button -->
+                        <div class="pt-2">
+                            <button onclick="evaluateDiagnosis()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold py-3 px-4 rounded-xl shadow-lg transition flex items-center justify-center space-x-2">
+                                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                                <span>送出診斷結果</span>
+                            </button>
+                        </div>
+
+                        <!-- Feedback Result Board -->
+                        <div id="sandbox-result" class="hidden p-4 rounded-xl border text-xs space-y-2">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Self-Assessment Panel -->
+        <section id="tab-self-assess" class="tab-panel hidden space-y-6">
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 space-y-4">
+                <div class="flex items-center space-x-3 border-b border-slate-100 pb-3">
+                    <div class="p-1.5 bg-emerald-50 text-emerald-600 rounded-lg"><i data-lucide="clipboard-list" class="w-5 h-5"></i></div>
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900">非正式學習風格與策略自評 (Learner Profile Assessment Simulator)</h4>
+                        <p class="text-xs text-slate-500">基於講義 2.17 節設計，請師培生模擬或協助特定學生作答，系統將立即繪製出風格地圖並給予專業華語教學調整方案。</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Survey Questions -->
+                    <div class="space-y-4">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded font-bold">自評說明</span>
+                            <p class="text-[11px] text-slate-500 mt-1">
+                                每題選項評分：1 = 很不同意，5 = 很同意。您可以隨意調整分數以模擬不同學生的學習傾向。
+                            </p>
+                        </div>
+
+                        <!-- Quiz Body Form -->
+                        <div id="survey-questions-list" class="space-y-3 max-h-[450px] overflow-y-auto pr-2">
+                            <!-- Populated Dynamically via JS -->
+                        </div>
+
+                        <button onclick="calculateProfile()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold py-3 rounded-xl transition shadow">
+                            計算風格傾向與產出教學建議
+                        </button>
+                    </div>
+
+                    <!-- Dynamic Profile Output -->
+                    <div id="profile-output-card" class="bg-slate-50 rounded-2xl border border-slate-200 p-6 flex flex-col justify-between space-y-4 min-h-[400px]">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                                <h5 class="font-bold text-slate-800 text-sm">學習風格診斷報告書</h5>
+                                <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">分析結果</span>
+                            </div>
+
+                            <!-- Styled Chart representation -->
+                            <div class="space-y-2 mt-4" id="profile-bars-container">
+                                <!-- Populated Dynamically via JS -->
+                            </div>
+                        </div>
+
+                        <div id="profile-recommendation" class="bg-white rounded-xl border border-slate-100 p-4 text-xs text-slate-600 space-y-2">
+                            <p class="font-bold text-slate-800 flex items-center gap-1"><i data-lucide="lightbulb" class="w-4 h-4 text-yellow-500"></i> 教師華語教學策略建議：</p>
+                            <p id="profile-rec-text">請在左側調整作答分數，並點選「計算風格」按鈕以產生個性化的華語課堂設計建議。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SLA Lesson Plan Builder Panel -->
+        <section id="tab-builder" class="tab-panel hidden space-y-6">
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 space-y-4">
+                <div class="flex items-center space-x-3 border-b border-slate-100 pb-3">
+                    <div class="p-1.5 bg-indigo-50 text-indigo-600 rounded-lg"><i data-lucide="layout" class="w-5 h-5"></i></div>
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900">SLA 語言點教學設計框架 (Lesson Plan Builder)</h4>
+                        <p class="text-xs text-slate-500">基於 7.1 節，整合「輸入-注意-控制操練-有意義操練-任務輸出-中介語回饋」之流程設計器。</p>
+                    </div>
+                </div>
+
+                <!-- Template Selector -->
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="loadSlaTemplate('把字句')" class="sla-tmpl-btn bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100 font-bold px-4 py-2 rounded-xl text-xs transition">「把」字句教學設計</button>
+                    <button onclick="loadSlaTemplate('了')" class="sla-tmpl-btn bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 px-4 py-2 rounded-xl text-xs transition">「了」時貌時態設計</button>
+                    <button onclick="loadSlaTemplate('比較句')" class="sla-tmpl-btn bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 px-4 py-2 rounded-xl text-xs transition">「比較句」教學設計</button>
+                    <button onclick="loadSlaTemplate('custom')" class="sla-tmpl-btn bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 px-4 py-2 rounded-xl text-xs transition">✨ 自定義空白教案</button>
+                </div>
+
+                <!-- Lesson Builder Content Board -->
+                <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6 space-y-4">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+                        <div>
+                            <span class="text-xs text-slate-400">目前編輯語言點：</span>
+                            <input type="text" id="builder-grammar-title" class="bg-white border border-slate-200 rounded-lg px-3 py-1 font-bold text-slate-800 text-sm focus:outline-emerald-500" value="「把」字句">
+                        </div>
+                        <button onclick="copyToClipboard('builder-export-area')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs px-3 py-1.5 rounded-lg shadow transition flex items-center space-x-1.5">
+                            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                            <span>複製完整教案內容</span>
+                        </button>
+                    </div>
+
+                    <!-- Visual Step-by-step table -->
+                    <div class="space-y-3" id="builder-export-area">
+                        <!-- Steps Loop -->
+                        <div class="grid grid-cols-1 lg:grid-cols-6 gap-3" id="builder-steps-list">
+                            <!-- Populated Dynamically via JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Certification Exam Panel -->
+        <section id="tab-exam" class="tab-panel hidden space-y-6">
+            <!-- Score Overview Header -->
+            <div id="exam-dashboard" class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center space-x-4">
+                    <div class="p-3 bg-amber-50 text-amber-600 rounded-2xl border border-amber-100"><i data-lucide="award" class="w-8 h-8"></i></div>
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900">教育部華語認證專業模擬檢核 (2020-2024真題 + 12題獨家高難度檢核題)</h4>
+                        <p class="text-xs text-slate-500">
+                            精心收錄 2020、2022、2023、2024 年度精選教育部華語能力認證考試「華語文教學」科目真題，並額外加入 <strong>12 題深度理論解析題</strong>。
+                        </p>
+                    </div>
+                </div>
+                <!-- Progress Tracker -->
+                <div class="flex items-center space-x-4 bg-slate-50 px-4 py-3 rounded-2xl border border-slate-100">
+                    <div class="text-center">
+                        <span class="text-xs text-slate-400 block uppercase">當前答題進度</span>
+                        <span class="text-xl font-extrabold text-indigo-600" id="exam-progress-text">0 / 24</span>
+                    </div>
+                    <div class="w-px h-8 bg-slate-200"></div>
+                    <div class="text-center">
+                        <span class="text-xs text-slate-400 block uppercase">測驗正確率</span>
+                        <span class="text-xl font-extrabold text-emerald-600" id="exam-score-percent">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Category Filter -->
+            <div class="flex flex-wrap gap-2">
+                <button onclick="filterExam('all')" id="filter-exam-all" class="exam-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 text-white shadow">
+                    全部題目 (共 24 題)
+                </button>
+                <button onclick="filterExam('2020')" id="filter-exam-2020" class="exam-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50">
+                    2020 真題
+                </button>
+                <button onclick="filterExam('2022')" id="filter-exam-2022" class="exam-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50">
+                    2022 真題
+                </button>
+                <button onclick="filterExam('2023')" id="filter-exam-2023" class="exam-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50">
+                    2023 真題
+                </button>
+                <button onclick="filterExam('2024')" id="filter-exam-2024" class="exam-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50">
+                    2024 真題
+                </button>
+                <button onclick="filterExam('new')" id="filter-exam-new" class="exam-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50">
+                    ⭐ 12題追加高難度檢核題
+                </button>
+            </div>
+
+            <!-- Quiz Main Box -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 space-y-6">
+                <!-- Question Pagination Buttons -->
+                <div class="flex flex-wrap gap-1.5 border-b border-slate-100 pb-4" id="quiz-pager">
+                    <!-- Populated Dynamically via JS -->
+                </div>
+
+                <!-- Active Question content -->
+                <div id="quiz-active-card" class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-full border border-indigo-100" id="quiz-active-num">載入中...</span>
+                        <span class="text-xs text-slate-400" id="quiz-source">試題來源</span>
+                    </div>
+                    <h3 class="text-base font-semibold text-slate-800 leading-relaxed" id="quiz-active-question">
+                        載入中...
+                    </h3>
+
+                    <!-- Option Buttons -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2" id="quiz-options-group">
+                        <!-- Populated Dynamically via JS -->
+                    </div>
+
+                    <!-- Immediate Feedback & Explanation Sheet -->
+                    <div id="quiz-explanation-card" class="hidden p-5 rounded-xl border space-y-2 text-xs">
+                        <!-- Populated Dynamically via JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mock Certificate of Achievement (Awarded upon completion) -->
+            <div id="exam-certificate" class="hidden bg-gradient-to-tr from-amber-500 via-yellow-500 to-amber-600 p-1 rounded-2xl shadow-xl transition duration-300">
+                <div class="bg-white rounded-[14px] p-6 text-center space-y-4">
+                    <div class="w-16 h-16 bg-amber-50 rounded-full mx-auto flex items-center justify-center text-amber-500 border-4 border-amber-400">
+                        <i data-lucide="shield-check" class="w-8 h-8"></i>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="text-xl font-black text-slate-900">教育部華語認證合格證書模擬發布</h4>
+                        <p class="text-xs text-slate-500">恭喜您！完成「華語第二語言習得基本理論」認證檢核</p>
+                    </div>
+                    <div class="border-t border-b border-dashed border-slate-200 py-3 max-w-sm mx-auto text-xs text-slate-600">
+                        <p>受訓人：<strong class="text-slate-800">華語資深儲備教師</strong></p>
+                        <p class="mt-1">學科總分：<strong class="text-emerald-600" id="cert-score">100分</strong>（完美通關）</p>
+                        <p>授課主辦：樹德科技大學通識教育學院 / 李永貞</p>
+                    </div>
+                    <p class="text-[10px] text-slate-400">認證發布時間：2026 年 07 月 19日</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. AI Assistant Panel (Dynamic API Integration) -->
+        <section id="tab-assistant" class="tab-panel hidden space-y-6">
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 space-y-4">
+                <div class="flex items-center space-x-3 border-b border-slate-100 pb-3">
+                    <div class="p-1.5 bg-emerald-50 text-emerald-600 rounded-lg"><i data-lucide="bot" class="w-5 h-5"></i></div>
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900">SLA 華語教學智囊 AI 助理</h4>
+                        <p class="text-xs text-slate-500">可直接輸入學生的偏誤句子、特定母語背景教學困境，取得精確的理論剖析與擬真引導詞！</p>
+                    </div>
+                </div>
+
+                <!-- API Key Section -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs space-y-2">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+                        <div>
+                            <span class="font-bold text-slate-800">🔑 Gemini API 金鑰（選填）</span>
+                            <p class="text-slate-500 mt-0.5">系統已預置默認運行金鑰。若您有自訂金鑰，可填入下方，金鑰僅在您的瀏覽器端安全發起請求。</p>
+                        </div>
+                        <input type="password" id="ai-api-key" placeholder="貼上您的 Gemini API Key" class="bg-white border border-slate-200 rounded-lg px-3 py-1 text-xs w-full sm:w-64 focus:outline-emerald-500">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Left inputs -->
+                    <div class="lg:col-span-1 space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">1. 選擇偏誤預設案例：</label>
+                            <select onchange="fillAssistantPrompt(this.value)" class="w-full text-xs border border-slate-200 rounded-xl px-3 py-2 bg-white focus:outline-emerald-500">
+                                <option value="">-- 手動自行輸入 --</option>
+                                <option value="日語母語者常把『去臺北』說成『去過臺北』，且與時貌助詞『了』严重混淆">日籍學生：了 vs 過</option>
+                                <option value="英語母語者寫出：『我昨天跟媽媽打了電話三小時。』分析時態、數量詞錯序">英籍學生：動作持續時間語序</option>
+                                <option value="越南籍學生，一到四聲容易唱讀，尤其分辨不清二聲與三聲。該如何利用語音對比與注意力假說設計？">越籍學生：二聲與三聲調值不準</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">2. 教學困境與錯句描述：</label>
+                            <textarea id="ai-user-query" rows="5" placeholder="例如：學生寫出『*我被中文很難』，應如何以偏誤分析表層遺漏、誤加與過度類化理論，為其設計再教學引導？" class="w-full text-xs border border-slate-200 rounded-xl p-3 focus:outline-emerald-500 bg-white"></textarea>
+                        </div>
+
+                        <button onclick="askSlaAi()" id="ai-submit-btn" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold py-3 rounded-xl transition shadow flex items-center justify-center space-x-2">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i>
+                            <span>AI 即時分析診斷</span>
+                        </button>
+                    </div>
+
+                    <!-- Right outputs -->
+                    <div class="lg:col-span-2 bg-slate-950 text-slate-100 rounded-2xl p-6 shadow-xl relative min-h-[350px] flex flex-col justify-between overflow-hidden">
+                        <!-- Code panel styled decorative background -->
+                        <div class="absolute top-2 right-4 flex space-x-1.5 opacity-55">
+                            <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+                            <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+                            <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                        </div>
+
+                        <div class="flex items-center space-x-2 border-b border-slate-800 pb-3 mb-4">
+                            <i data-lucide="terminal" class="w-4 h-4 text-emerald-400"></i>
+                            <span class="text-xs font-mono text-emerald-400">SLA-ENGINE-DIAGNOSTIC-TERM://</span>
+                        </div>
+
+                        <div class="flex-1 overflow-y-auto max-h-[350px] pr-2 text-xs font-mono space-y-4" id="ai-output-box">
+                            <p class="text-slate-400">// 等待輸入教學案例中...</p>
+                            <p class="text-slate-400">// 請在左側輸入或選擇問題，並點選「AI 即時分析診斷」按鈕。</p>
+                        </div>
+
+                        <div class="border-t border-slate-800 pt-3 mt-4 text-[10px] text-slate-500 flex justify-between items-center">
+                            <span>MODEL: gemini-3-flash-preview</span>
+                            <span>樹德科技大學華語師培提供</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<!-- JS Controller logic -->
+<script>
+// --- GLOBAL DATA MOCKS & DATABASES ---
+const DIAG_CASES = [
+    {
+        id: "case1",
+        title: "英籍學生：*我吃飯在餐廳。",
+        sentence: "「*我吃飯在餐廳。」",
+        meaning: "正確對應：「我在餐廳吃飯。」",
+        background: "學習者背景：英語母語者",
+        severity: "級別：初級偏誤",
+        surface: "錯序",
+        deep: "語際遷移",
+        feedback: "提示",
+        expl: "此錯誤由於受到英語『S + V + PP (at restaurant)』結構的負遷移（語際遷移）影響，造成錯序偏誤。初級階段最適宜使用『提示 (Elicitation)』方式（如：地點要放在動詞的前面還是後面？），引導學生調用工作記憶自我糾正，而非過度直接糾正，有助於其程序化自動化運作。"
+    },
+    {
+        id: "case2",
+        title: "日籍學生：*我昨天很開心了。",
+        sentence: "「*我昨天很開心了。」",
+        meaning: "正確對應：「我昨天很開心。」（狀態句不用時貌助詞了）",
+        background: "學習者背景：日語母語者",
+        severity: "級別：中級/教學誘發",
+        surface: "誤加",
+        deep: "教學誘發",
+        feedback: "後設語言",
+        expl: "『開心』是形容詞（狀態動詞），華語在陳述過去狀態時，不需在末尾加『了』。此問題常因教材過早將『了』對等為英文過去式 (past tense) 所致（教學誘發偏誤）。使用後設語言回饋可釐清『了』代表事件觀點（完成或變化），而非單純時間過去時態。"
+    },
+    {
+        id: "case3",
+        title: "越籍學生：*老師，我不要你的課。",
+        sentence: "「*老師，我不要你的課。」",
+        meaning: "正確對應：「老師，我今天可能沒辦法上課/我想請假。」",
+        background: "學習者背景：越南語母語者（初入臺灣生活）",
+        severity: "級別：高級/語用偏誤",
+        surface: "誤選",
+        deep: "語際遷移",
+        feedback: "重述",
+        expl: "雖然文法無嚴重出錯，但這屬於嚴重的『語用偏誤』。直譯拒絕造成越語『不要』的不當套用。為了維護課堂情意過濾（不使學生因糾錯感到羞辱），教師宜採用自然『重述 (Recast)』方式示範得體華語（例如：『喔，你想請假是嗎？』），避免破壞師生情感安全感。"
+    }
+];
+
+const SURVEY_QUESTIONS = [
+    { id: 1, text: "我看圖表或顏色標記時，比較容易理解語法結構。", cat: "Visual", weight: "視覺偏好" },
+    { id: 2, text: "我聽老師或同學說例句時，比背誦文字規則容易記住用法。", cat: "Auditory", weight: "聽覺偏好" },
+    { id: 3, text: "我需要把規則默寫下來，才覺得自己切實學會了。", cat: "ReadWrite", weight: "讀寫偏好" },
+    { id: 4, text: "我做角色扮演、動態遊戲或實際任務時，最容易記住句子。", cat: "Kinesthetic", weight: "動覺偏好" },
+    { id: 5, text: "我喜歡先知道整堂課要完成什麼生活任務（如：租屋點餐）。", cat: "Global", weight: "整體取向" }
+];
+
+const SLA_LESSON_TEMPLATES = {
+    "把字句": {
+        title: "「把」字句教學設計",
+        steps: [
+            { stage: "輸入 (Input)", rule: "可理解輸入", action: "播放『做菜教學』影片。呈現多個特定受事：『把雞蛋打進碗裡、把垃圾丟掉、把衣服放進衣櫃。』不需過早解釋結構名稱。" },
+            { stage: "注意 (Noticing)", rule: "注意力假說", action: "以底線、粗體或不同顏色標示關鍵形式：『我 <u>把</u> <b>衣服</b> 放進 <i>衣櫃</i>』。引導學生觀察並歸納『把』字句後方的成分為已知、特定的處置對象。" },
+            { stage: "控制操練", rule: "技能自動化", action: "使用圖片進行機械與半受控結構替換。例如：『老師把書（放/桌上）』->『老師把書放在桌上。』限制工作記憶負荷過重。" },
+            { stage: "有意義操練", rule: "形式功能連結", action: "結合真實資訊提問：『你今天出門前，把手機放在哪裡？』學生回答：『我把手機放在書包裡。』" },
+            { stage: "任務輸出", rule: "推動輸出", action: "設計『整理房間』或『辦公室佈置』任務。A與B各有一張殘缺的佈置圖（資訊差），需進行對話詢問並用『把』字句要求對方將物品歸位。" },
+            { stage: "中介語回饋", rule: "偏誤回饋決策", action: "整理學生在任務中出現的偏誤（如遺漏處置結果：*我把書放）。於活動結束後，進行全班性的重述與後設語言糾偏。" }
+        ]
+    },
+    "了": {
+        title: "時貌助詞「了」時態教學設計",
+        steps: [
+            { stage: "輸入 (Input)", rule: "事件完成度", action: "展示故事圖卡『昨天的事』：小明昨天去了台北、買了咖啡、看了一場電影。讓學生浸潤在完成性事件環境中。" },
+            { stage: "注意 (Noticing)", rule: "注意力假說", action: "並列對比句。呈現：『我去了台北』與『我去過台北』，指出『了』強調事件發生或完成，而『過』強調過去經驗。" },
+            { stage: "控制操練", rule: "受控焦點處理", action: "事件時間軸填空。例如：『小明昨天看（ ）電影。』『他明天去台北。』讓學生判斷是否填入『了』keys。" },
+            { stage: "有意義操練", rule: "情意關聯", action: "請學生回憶昨天完成的三件事：『我昨天買了...、吃了...、做了...』並進行兩人一組核實。" },
+            { stage: "任務輸出", rule: "生活真實任務", action: "扮演『偵探與嫌犯』。警察偵訊嫌犯昨晚八點到十點在做什麼（資訊差），嫌犯必須具體說明已完成的多個連貫性動作。" },
+            { stage: "中介語回饋", rule: "回饋分段決策", action: "對常見誤加（*我很開心了）進行明示糾錯；在偵訊角色扮演活動中，則採取非干涉的『重述』或延後集體反饋。" }
+        ]
+    }
+};
+
+// --- STREAMING_CHUNK: 加載教育部華語認證試題(2020-2024精選)與追加高難度檢核題... -->
+const QUIZ_QUESTIONS = [
+    // --- 2020真題 ---
+    {
+        id: 1,
+        year: "2020",
+        q: "【2020年選擇1】關於人類的語言習得，下列敘述何者最適當？",
+        a: "Krashen 的習得/學習假說，主張第二語言的流利度在學習而不在習得。",
+        b: "Lado的對比分析理論，認為第二語言習得的障礙來自第一語言的干擾。",
+        c: "Long的互動假說，著重於研究學習者對情境意義理解與掌握的過程。",
+        d: "Rogers 的建構學派學習理論，關注學習者的認知過程，而非情境脈絡。",
+        correct: "b",
+        expl: "Lado 的對比分析假說 (Contrastive Analysis Hypothesis) 基於行為主義，認為第一語言 (L1) 習慣的干擾（負遷移）是第二語言習得的主要障礙與偏誤來源。L1 與 L2 差異越大，干擾越強。C 選項中，互動假說著重的是互動中的『語義協商』如何促成可理解輸入與形式注意，而非單純情境理解。因此 B 最適當。"
+    },
+    {
+        id: 2,
+        year: "2020",
+        q: "【2020年選擇2】下列何者不是 Krashen 第二語言習得理論的主要假說？",
+        a: "語言學習與語言習得是相近但有差別的概念。",
+        b: "第二語言學習在學習詞彙及語法方面有其自然之順序。",
+        c: "二語學習者的情緒 and 壓力會影響學習成效。",
+        d: "監控假說(Monitor Hypothesis)認為後天習學的語言系統可以引領學習者自然開口使用語言。",
+        correct: "d",
+        expl: "Krashen 的『監控假說』明確指出，自然開口說話（流利度）是由『習得』系統引領的，而有意識地『學習』得到的規則系統，只能起到在輸出前或輸出後進行檢查、修正與監控 (Monitor) 的作用。故 D 說法錯誤（它把學習系統當成開口引領者，實則為監控者）。"
+    },
+    {
+        id: 3,
+        year: "2020",
+        q: "【2020年選擇6】關於「沉浸式教學(Immersion Program)」的概念，下列敘述何者最不適當？",
+        a: "非雙語教育，不允許同時使用學生母語，使學生自然沉浸在第二語言的情境中。",
+        b: "學習型態是以內容為主的教學方式(Content-Based Instruction)。",
+        c: "部分沉浸式教學可指一半的時間使用目標語，另一半時間使用學習者的第一語言。",
+        d: "沉浸式的課程 and 第一語言的課程平行並進。",
+        correct: "a",
+        expl: "沉浸式教學（Immersion）事實上是一種特殊的雙語教育（Bilingual Education）形式，它提倡將學科內容與語言學習相結合（CBI），在許多加拿大與美國實踐中，雙語轉換和適度使用母語或雙母語共建是允許的，並不代表絕對禁止或排除雙語教育。故 A 選項最不適當。"
+    },
+    {
+        id: 4,
+        year: "2020",
+        q: "【2020年選擇7】下列特徵何者出現時，最適合應用注重形式的教法(Form-Focused Instruction) ？",
+        a: "第一與第二語言明顯不同的特徵",
+        b: "規則常見的特徵",
+        c: "在第二語言不易察覺的特徵",
+        d: "有重要溝通功能的特徵",
+        correct: "c",
+        expl: "當某些語法或語音特徵在第二語言中極不易被學習者在自然輸入中「察覺」或「注意到」（Salience 顯著度極低，例如英文的第三人稱單數 -s，或華語的時間、地點狀語語序以及非重讀助詞），此時最需要應用『注重形式的教學 (FFI / Focus on Form)』，透過輸入強化、明示引導等人工干擾手段，強迫大腦進行注意。"
+    },
+    // --- 2022真題 ---
+    {
+        id: 5,
+        year: "2022",
+        q: "【2022年選擇9】注意力處理模式(Attention-Processing Model)提出學習者習得第二語言的過程中，會啟動焦點(focal)注意力和邊緣(peripheral)注意力。請問下列何項學習活動是以邊緣注意力處理訊息？",
+        a: "略讀與快速閱讀",
+        b: "瀏覽找尋特定關鍵字",
+        c: "解釋某個語法的重點",
+        d: "同儕間互相修改寫作內容",
+        correct: "a",
+        expl: "在『略讀與快速閱讀 (Skimming)』時，學習者的焦點注意力放在抓取全篇大意或訊息流上，對於個別詞彙、句法細節 or 語音規則，主要是由『邊緣注意力 (Peripheral)』進行背景式、下意識的快速掃描與處理。而 C 語法重點則是極端受控焦點注意。"
+    },
+    {
+        id: 6,
+        year: "2022",
+        q: "【2022年選擇26】關於中介語(Interlanguage)的敘述，請問下列何者最為適宜？",
+        a: "中介語具有系統性，即中介語是相對獨立的語言系統，形成目的語的變體，與目的語的語音、語法和辭彙規則相同",
+        b: "中介語是指第二語言學習者建構的介於母語 and 目的語之間的過渡性語言，它處於不斷發展變化的過程中，並逐漸向目的語靠近",
+        c: "中介語具有可變性，藉助「假設-檢驗」手段，緩慢地修改已有的規則以適應目的語新規則的過程，之後不再改變，即無法再精進",
+        d: "第二語言學習過程存在著語言石化(fossilization)現象，這些表現在中介語中無法改變，使得所有學習者不能完全獲得目的語的語言能力",
+        correct: "b",
+        expl: "中介語 (Interlanguage) 具有動態性、系統性、可變性，是介於母語與目的語之間的過渡性語言系統，並不斷進行假設與檢驗，緩慢地向目的語逼近（B 對）。A 錯在規則與目的語不完全相同；C 錯在它會持續改變；D 錯在石化並非絕對不可變，且並非所有學習者都一定石化。"
+    },
+    {
+        id: 7,
+        year: "2022",
+        q: "【2022年選擇30】華語課堂學生說出「我吃飯在餐廳」時，老師將句子重組然後說「喔，你在餐廳吃飯，你和誰一起吃呢？」請問老師是以下列何種回饋類型進行糾正？",
+        a: "重述",
+        b: "引導",
+        c: "重複",
+        d: "後設語言回饋",
+        correct: "a",
+        expl: "重述 (Recast) 是指教師在不打斷溝通流暢度的情况下，將學生剛才不正確的句子進行正確重組、修復，並以自然的會話口語形式回應出來。本題中，老師將學生『我吃飯在餐廳』重組為『你在餐廳吃飯』，並接續話題，屬於標準的隱性重述。"
+    },
+    // --- 2023真題 ---
+    {
+        id: 8,
+        year: "2023",
+        q: "【2023年選擇1】Corder 提出基於學習者所犯錯誤可分為四階段，「U型學習(U-shaped learning)」出現在成形階段(emergent stage)，比較接近於下列哪一種現象？",
+        a: "此為進入遺忘階段，必須密集糾錯。",
+        b: "退化而成為一種不穩定現象，經常犯錯。",
+        c: "這階段的學習者很想表現所學，教師無須擔心也不必指導。",
+        d: "剛學過而還未熟練時，會有一小段退步的情形，但之後隨著學習就會進步。",
+        correct: "b",
+        expl: "U型學習代表中介語發展中的非線性特徵：第一階段（高起點）：靠完整記憶語塊，表現極少出錯；第二階段（中間低谷）：開始自行分析歸納規則，嘗試自己組裝，此時錯誤大量暴增、看似退化退步，實則是思維規則建構中的『不穩定狀態』；第三階段：規則修正後重新上升至高正確率。故選擇 B。"
+    },
+    {
+        id: 9,
+        year: "2023",
+        q: "【2023年選擇3】以下哪一種情況可視為「模糊容忍度(ambiguity tolerance)」低的學習風格？",
+        a: "學習者過度講求口語的流利度。",
+        b: "學習者在聽講 and 閱讀時，忽略詞彙的歧義性。",
+        c: "學習者在學習過程中對多義詞感到強烈的挫折或畏懼。",
+        d: "學習者語法、語義或語用的偏誤因缺乏適當的監控 and 引導而產生內化現象。",
+        correct: "c",
+        expl: "『模糊容忍度 (Ambiguity Tolerance)』低的人，無法忍受語言輸入中的不確定性、多義性 or 模糊部分，一遇到生詞、歧義詞或不熟悉的文化語用，就會感到高度挫折與焦慮（C 選項描述），會急切想要找到唯一標準答案，限制了整體整合學習。"
+    },
+    // --- 2024真題 ---
+    {
+        id: 10,
+        year: "2024",
+        q: "【2024年選擇2】下列關於語言習得的理論，何者有誤？",
+        a: "認知學派認為語言學習是一種認知過程，是透過被動接受外來指導而產生",
+        b: "行為學派認為語言是習慣的養成，透過刺激反應的制約，反覆練習以獲得學習效果",
+        c: "先天論學派認為語言是人類的本能，接受外在語言的激發後，能構建出該語言的語法",
+        d: "社會建構學派認為語言學習需要在有經驗者的鷹架保護下，提供足夠的支持，讓學生建構更高層次的知識",
+        correct: "a",
+        expl: "認知學派 (Cognitivism) 強調學習者在處理語言輸入時是『主動』觀察、處理、歸納與假設驗證的心智建構過程，而不是『被動接受外來指導』。被動刺激反應屬於行為主義學派特點。故 A 選項錯誤。"
+    },
+    {
+        id: 11,
+        year: "2024",
+        q: "【2024年選擇27】有關中介語概念中所探討的語言石化現象(fossilization),下列描述何者正確？",
+        a: "是一種臨時性的語言錯誤，但糾正後還會反覆出現",
+        b: "是學習者在語言習得過程中形成的錯誤且成為習慣，難以被糾正",
+        c: "是一種在語言習得過程中出現的隨機錯誤，可以透過自我監控機制發現",
+        d: "是學習者在語言輸出時出現的語言弱化現象，是母語負遷移所造成的結果",
+        correct: "b",
+        expl: "石化 (Fossilization) 是指中介語中的某些錯誤結構或發音偏誤，已經高度自動化並形成習慣、固定在學習者的系統中，即便經過大量輸入與教學回饋也難以被改正的現象。故選 B。A 屬於失誤；C 屬於偶發非石化。"
+    },
+    {
+        id: 12,
+        year: "2024",
+        q: "【2024年選擇35】有一個學習者在課堂上學了「昨天、今天、明天」以後，在一次自我介紹中說出「我昨來臺灣學中文」，該名學生的錯誤用法起因於下列何種語言習得因素？",
+        a: "母語干擾",
+        b: "正面遷移",
+        c: "過度類化",
+        d: "語言石化",
+        correct: "c",
+        expl: "學生學了『昨天、今天、明天』與『去年、今年、明年』後，將『去年』與『昨天』混淆，試圖自行將『昨天』類推簡化出『昨』代表過去，套入『我去年...』而造出『昨來台灣』，這屬於將已有目的語規則推演擴大至不適用之處的典型『過度類化 (Overgeneralization) / 語內遷移』。"
+    },
+
+    // --- STREAMING_CHUNK: 加載 12 題追加高難度深度理論檢核題 (13 - 24) ---
+    {
+        id: 13,
+        year: "new",
+        q: "【追加檢核 1】根據 Schmidt 注意力假說 (Noticing Hypothesis)，當學習者在課堂閱讀中，教師故意將語法點「在 + 地點 + V」以紅色加底線標出，其核心教學動機是屬於下列何者？",
+        a: "後設語言回饋 (Metalinguistic Feedback)",
+        b: "輸入強化 (Input Enhancement)",
+        c: "推動輸出 (Pushed Output)",
+        d: "情意過濾降低 (Affective Filter Reduction)",
+        correct: "b",
+        expl: "輸入強化 (Input Enhancement) 是指通過字體加粗、顏色標記、下劃線或音高突出等物理方式，引導學習者在接觸輸入時主動「注意到 (Notice)」特定的語言形式。這完全符合注意力假說，用來促成輸入轉化為攝入。"
+    },
+    {
+        id: 14,
+        year: "new",
+        q: "【追加檢核 2】中級學習者在寫作作文時，能完全正確地寫出「這個地方很好」、「我喜歡這裡」，卻完全避開剛學到的複合句或「 A 之所以...是因為 B」結構。這種現象最可能反映出下列何者策略？",
+        a: "轉碼策略 (Code-switching)",
+        b: "補償策略 (Compensation)",
+        c: "迴避策略 (Avoidance)",
+        d: "社交策略 (Social Strategy)",
+        correct: "c",
+        expl: "迴避策略 (Avoidance) 是指學習者在面對不熟悉或害怕犯錯的複雜結構時，刻意選擇使用更簡單、百分之百把握的句子來代替。這會導致表面上無錯（精確度高），但實際上句法複雜度與中介語發展停滯不前。"
+    },
+    {
+        id: 15,
+        year: "new",
+        q: "【追加檢核 3】Selinker 提出的中介語心理語言歷程中，因「教師過度簡化說明，使學生以為『了』就等於英文的過去式 past tense」所造成的偏誤來源，稱為：",
+        a: "語言遷移 (Language Transfer)",
+        b: "學習策略 (Learning Strategy)",
+        c: "溝通策略 (Communication Strategy)",
+        d: "訓練遷移 (Transfer of Training / 教學誘發)",
+        correct: "d",
+        expl: "訓練遷移 (Transfer of Training) 或稱教學誘發偏誤 (Training-induced Error)，是指由於不當的教材安排、教師的不精準或過度簡化講解，導致學生建立了錯誤的文法假設與規則體系。"
+    },
+    {
+        id: 16,
+        year: "new",
+        q: "【追加檢核 4】Schumann 的文化適應模式 (Acculturation Model) 認為，華語學習者如果長期縮在與自己相同母語的同鄉社群裡、不看臺灣媒體、不與臺灣人交流。這屬於何種距離過大？",
+        a: "心理距離 (Psychological Distance)",
+        b: "社會距離 (Social Distance)",
+        c: "物理距離 (Physical Distance)",
+        d: "溝通距離 (Communication Distance)",
+        correct: "b",
+        expl: "社會距離 (Social Distance) 是指學習者社群與目的語社群之間的社會學關係（如社群界限、融合態度、規模大小等）。長期孤立於同鄉社群、無實質社會交際接觸，屬於典型的社會距離過大，這會嚴重限制有效輸入與輸出機會。"
+    },
+    {
+        id: 17,
+        year: "new",
+        q: "【追加檢核 5】在 Vygotsky 社會文化理論中，當一個學習者無法獨立寫出完整的「把字句」作文，但教師給予其「主語 + 把 + 特定對象 + 動詞 + 處置結果（如放、丟）」的語法提示框架卡片後，學生得以順利完成作文。這張提示卡片在 ZPD 理論中扮演的角色是：",
+        a: "攝入機制 (Intake Mechanism)",
+        b: "溝通補償工具 (Compensatory Tool)",
+        c: "鷹架 (Scaffolding)",
+        d: "監控器 (Monitor)",
+        correct: "c",
+        expl: "鷹架 (Scaffolding) 是指在近側發展區 (ZPD) 中，教師、同儕或教學工具所提供的暫時性、支持性引導。一旦學習者內化並熟練了該技能，此支架便會逐步被撤除。"
+    },
+    {
+        id: 18,
+        year: "new",
+        q: "【追加檢核 6】一對一會話課中，學生說：「*我昨天去圖書館。」，老師微笑著說：「喔！你昨天『去了』圖書館啊。你借了什麼書呢？」。老師在此處的糾錯方式主要是基於：",
+        a: "情意過濾高、明示糾錯",
+        b: "維護情感安全感、採用重述 (Recast)",
+        c: "後設語言講解、提高監控",
+        d: "強行打斷、建立正確習慣",
+        correct: "b",
+        expl: "重述 (Recast) 是一種高度隱性、非干涉的糾錯反饋方式。此舉既指出了正確語法（去了圖書館），又完美維護了學生的自尊心，避免拉高其情意過濾器 (Affective Filter)，最適合流暢度導向的會話課。"
+    },
+    {
+        id: 19,
+        year: "new",
+        q: "【追加檢核 7】根據 Witkin 認知風格理論，在華語課上，「場獨立 (Field-independent)」型學生與「場依存 (Field-dependent)」型學生相比，前者通常更偏好：",
+        a: "小組角色扮演與社交溝通",
+        b: "獨立分析複雜的語法規則表",
+        c: "依靠老師給予即時情緒鼓勵",
+        d: "從整體背景中空間辨認大意",
+        correct: "b",
+        expl: "場獨立者 (Field-independent) 具有強烈分析細節的能力，傾向於不依賴外部情境，依靠內部知識框架解題。他們在學習抽象語法結構、歸納近義詞規則與進行紙筆邏輯改錯時通常更具優勢、也更偏好此類活動。"
+    },
+    {
+        id: 20,
+        year: "new",
+        q: "【追加檢核 8】Krashen 情意過濾假說 (Affective Filter Hypothesis) 提到，焦慮、動機與自信是情意變量。以下哪項教學行為最容易「拉高」學生的情意過濾器，從而阻礙二語習得？",
+        a: "在學生自由表達觀點時，頻繁打斷並進行明示糾錯、逐字正音",
+        b: "提供句型支架與時間卡片，讓學生先在兩人小組中排練",
+        c: "採用多元評量（如同儕評量、作品集），減少單一考試頻率",
+        d: "辦理教學觀摩與競賽，激勵同儕間高頻率公開表現",
+        correct: "a",
+        expl: "在自由表達口說流暢度任務中，頻繁打斷並在全班面前進行高壓明示糾錯、逐字正音，最容易引發社會評價焦慮、降低學習自信，拉高情意過濾器，導致學生不敢再開口。這不符合 Krashen 理論。"
+    },
+    {
+        id: 21,
+        year: "new",
+        q: "【追加檢核 9】McLaughlin 提出的注意力處理模式中，當一個學習者在口語點餐任務中，能夠完全自如地向服務生說出「我想點一杯半糖去冰的珍奶，麻煩你」，而此時大腦完全沒有刻意思索名詞或副詞的位置。此時他的語言處理機制處於：",
+        a: "受控處理 + 焦點注意力",
+        b: "受控處理 + 邊緣注意力",
+        c: "自動處理 + 邊緣注意力",
+        d: "自動處理 + 焦點注意力",
+        correct: "c",
+        expl: "當學生的語言形式已經高度熟練並進入「自動化 (Automatic)」提取狀態，他在說話時，焦點注意力聚焦在溝通意圖（要點什麼飲料），而語言結構本身則交由「邊緣注意力 (Peripheral)」流暢地自動輸出。"
+    },
+    {
+        id: 22,
+        year: "new",
+        q: "【追加檢核 10】對比分析假說 (Contrastive Analysis Hypothesis) 的「弱勢假設」和「強勢假設」相比，弱勢假設更強調：",
+        a: "對比分析旨在事前準確預測並防止所有偏誤的發生",
+        b: "差異不一定等於困難，對比主要用來在事後解釋已出現的偏誤原因",
+        c: "母語與目的語看似微小的差異，比巨大差異更容易掌握",
+        d: "學習者在任何階段的中介語發展都是由其 L1 完全決定的",
+        correct: "b",
+        expl: "弱勢假設 (Weak Hypothesis) 承認了強勢假設（純粹預測）的局限，主張對比分析的真正價值在於事後 (explanatory/diagnostic) 去診斷、分析和解釋學生為何會產生特定的偏誤，不把預測當成絕對定論。"
+    },
+    {
+        id: 23,
+        year: "new",
+        q: "【追加檢核 11】華語教師在黑板上列出：\n『小英買了咖啡，喝完就去上課。』\n引導學生思考在『喝完』前面省略了什麼。這是在培養學生的何種篇章能力？",
+        a: "預測能力 (Predicting)",
+        b: "零代詞 (Zero Anaphora) 辨識與指代功能",
+        c: "語體對比 (Register)",
+        d: "段落邏輯功能標記",
+        correct: "b",
+        expl: "華語是典型的話題顯著語言，篇章中經常省略已知的主語或賓語，此種現象稱為零代詞 (Zero Anaphora)。引導學生注意到省略的『它（咖啡）』指代誰，是在培養高階篇章銜接與理解能力。"
+    },
+    {
+        id: 24,
+        year: "new",
+        q: "【追加檢核 12】在教導「比較句 (A比B...)」時，教師設計了『資訊差 (Information Gap) 租屋任務』。A 有三間公寓的租金與面積，B 有這三間公寓的位置與捷運距離。兩人需互問完成比較並做出決策。此設計最大的 SLA 理論價值在於：",
+        a: "促使學生透過有意識地死記硬背，掌握 A比B 語法",
+        b: "創造了真實的語義協商 (Negotiation of Meaning) 與推動輸出需求",
+        c: "實現了純粹、零焦慮的隱性潛意識學習",
+        d: "完全排除了教師的引導作用",
+        correct: "b",
+        expl: "資訊差 (Information Gap) 任務迫使同儕在不對等的資訊環境下，必須進行確認核實、澄清要求等『語義協商』，並為了解決生活任務而進行『推動輸出 (Pushed Output)』，從而將結構、意義、語用完美連結。"
+    }
+];
+
+// --- APP STATE ---
+let activeTab = "slides";
+let activeCaseId = "case1";
+let sandboxAnswers = { surface: null, deep: null, feedback: null };
+let surveyScores = {};
+let activeQuizIndex = 0;
+let quizUserAnswers = Array(QUIZ_QUESTIONS.length).fill(null);
+let activeFilter = "all";
+let filteredQuestions = [...QUIZ_QUESTIONS];
+
+// --- STREAMING_CHUNK: 綁定初始化載入與元件掛載... -->
+// --- ON LOAD ---
+window.onload = function() {
+    initApp();
+    lucide.createIcons();
+};
+
+function initApp() {
+    // 1. Load Playground Cases
+    const listEl = document.getElementById("cases-list");
+    listEl.innerHTML = "";
+    DIAG_CASES.forEach((c) => {
+        const btn = document.createElement("button");
+        btn.id = `case-btn-${c.id}`;
+        btn.className = `w-full text-left p-3 rounded-xl border text-xs font-semibold transition ${c.id === activeCaseId ? 'bg-indigo-50 border-indigo-300 text-indigo-800 shadow-sm' : 'bg-white border-slate-200 hover:bg-slate-50 text-slate-700'}`;
+        btn.onclick = () => selectCase(c.id);
+        btn.innerHTML = `
+            <div class="flex items-center justify-between">
+                <span>${c.title}</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </div>
+        `;
+        listEl.appendChild(btn);
+    });
+
+    // 2. Load Survey Questions
+    const surveyEl = document.getElementById("survey-questions-list");
+    surveyEl.innerHTML = "";
+    SURVEY_QUESTIONS.forEach((q) => {
+        surveyScores[q.id] = 3; // default neutral score
+        const item = document.createElement("div");
+        item.className = "p-3 bg-white border border-slate-200 rounded-xl space-y-2";
+        item.innerHTML = `
+            <div class="flex items-start justify-between gap-4">
+                <span class="text-xs font-bold text-slate-400">Q${q.id}</span>
+                <p class="text-xs text-slate-700 flex-1 leading-relaxed">${q.text} <span class="text-[10px] text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded font-mono ml-1">${q.weight}</span></p>
+            </div>
+            <div class="flex items-center justify-between gap-1">
+                <span class="text-[10px] text-slate-400">不同意</span>
+                <div class="flex space-x-1.5">
+                    ${[1, 2, 3, 4, 5].map(v => `
+                        <button onclick="setSurveyScore(${q.id}, ${v})" id="survey-val-${q.id}-${v}" class="w-8 h-8 rounded-full text-xs font-bold border transition ${v === 3 ? 'bg-indigo-600 text-white border-indigo-600' : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'}">${v}</button>
+                    `).join("")}
+                </div>
+                <span class="text-[10px] text-slate-400">非常同意</span>
+            </div>
+        `;
+        surveyEl.appendChild(item);
+    });
+
+    // 3. Load SLA Lesson Plan Builder
+    loadSlaTemplate("把字句");
+
+    // 4. Load Mock Quiz questions
+    filterExam("all");
+
+    // Refresh UI icons
+    lucide.createIcons();
+}
+
+// --- UTILITIES ---
+function copyToClipboard(elementId) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+    
+    const textarea = document.createElement("textarea");
+    textarea.value = el.innerText || el.textContent;
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+        document.execCommand('copy');
+        showModalAlert("複製成功！", "SLA 語言點教案已成功複製至剪貼簿，可直接黏貼至 Word、備課講義或 PowerPoint 中。");
+    } catch (err) {
+        console.error("Copy failed", err);
+    }
+    document.body.removeChild(textarea);
+}
+
+function showModalAlert(title, message) {
+    const dialog = document.createElement("div");
+    dialog.className = "fixed inset-0 bg-slate-900/60 flex items-center justify-center p-4 z-50 animate-fade-in";
+    dialog.onclick = () => document.body.removeChild(dialog);
+    dialog.innerHTML = `
+        <div class="bg-white rounded-2xl max-w-sm w-full p-6 space-y-4 shadow-xl border border-slate-100" onclick="event.stopPropagation()">
+            <div class="flex items-center space-x-3">
+                <div class="p-2 bg-emerald-50 text-emerald-600 rounded-full">
+                    <i data-lucide="info" class="w-5 h-5"></i>
+                </div>
+                <h4 class="font-bold text-slate-900">${title}</h4>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">${message}</p>
+            <button onclick="this.closest('.fixed').remove()" class="w-full bg-slate-900 text-white hover:bg-slate-800 text-xs py-2 rounded-xl transition font-semibold">
+                確認
+            </button>
+        </div>
+    `;
+    document.body.appendChild(dialog);
+    lucide.createIcons();
+}
+
+// --- TAB SWITCHER ---
+function switchTab(tabId) {
+    activeTab = tabId;
+    
+    document.querySelectorAll(".nav-btn").forEach(btn => {
+        btn.className = "nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition-all duration-150";
+    });
+    
+    const targetNav = document.getElementById(`nav-${tabId}`);
+    if (targetNav) {
+        targetNav.className = "nav-btn w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-150 bg-emerald-500 text-slate-950 shadow-lg shadow-emerald-500/10";
+    }
+
+    const titles = {
+        slides: "講義全內容導覽",
+        diagnostic: "偏誤與中介語診斷室",
+        "self-assess": "風格與學習策略自評",
+        builder: "SLA 語言點教學設計器",
+        exam: "教育部華語認證專業模擬檢核",
+        assistant: "SLA 華語教學智囊 AI 助理"
+    };
+    document.getElementById("top-title").innerText = titles[tabId];
+
+    document.querySelectorAll(".tab-panel").forEach(panel => {
+        panel.classList.add("hidden");
+    });
+    document.getElementById(`tab-${tabId}`).classList.remove("hidden");
+    
+    lucide.createIcons();
+}
+
+// --- STREAMING_CHUNK: 綁定單元與階段互動機制... -->
+// --- UNIT SWITCHER IN SLIDES TAB ---
+function switchSlideUnit(unitId) {
+    document.querySelectorAll(".unit-tab-btn").forEach(btn => {
+        btn.className = "unit-tab-btn p-2.5 rounded-xl border text-[11px] font-bold transition-all text-center bg-transparent text-slate-200 border-white/20 hover:bg-white/10";
+    });
+    const activeBtn = document.getElementById(`unit-tab-${unitId}`);
+    if (activeBtn) {
+        activeBtn.className = "unit-tab-btn p-2.5 rounded-xl border text-[11px] font-bold transition-all text-center bg-white text-slate-900 shadow";
+    }
+
+    document.querySelectorAll(".unit-content").forEach(content => {
+        content.classList.add("hidden");
+    });
+    document.getElementById(`unit-content-${unitId}`).classList.remove("hidden");
+}
+
+// --- SLA ADAPTATION STAGES INTERACTIVE SWITCHER ---
+function showFullStage(stageId) {
+    document.querySelectorAll(".f-stage-btn").forEach(btn => {
+        btn.className = "f-stage-btn p-3 rounded-xl border text-center transition bg-white text-slate-700 border-slate-200 hover:bg-slate-50 text-xs";
+    });
+    const activeBtn = document.getElementById(`f-stage-btn-${stageId}`);
+    if (activeBtn) {
+        activeBtn.className = "f-stage-btn p-3 rounded-xl border text-center transition bg-emerald-500 text-white border-emerald-500 font-semibold text-xs";
+    }
+
+    const stageData = STAGE_DETAILS[stageId];
+    if (stageData) {
+        document.getElementById("f-stage-title").innerText = stageData.title;
+        document.getElementById("f-stage-badge").innerText = stageData.badge;
+        document.getElementById("f-stage-desc").innerText = stageData.desc;
+        document.getElementById("f-stage-action").innerText = stageData.action;
+    }
+}
+
+// --- 2. DIAGNOSTIC PLAYGROUND LOGIC ---
+function selectCase(id) {
+    activeCaseId = id;
+    
+    document.querySelectorAll("#cases-list button").forEach(btn => {
+        btn.className = "w-full text-left p-3 rounded-xl border text-xs font-semibold transition bg-white border-slate-200 hover:bg-slate-50 text-slate-700";
+    });
+    const activeBtn = document.getElementById(`case-btn-${id}`);
+    if (activeBtn) {
+        activeBtn.className = "w-full text-left p-3 rounded-xl border text-xs font-semibold transition bg-indigo-50 border-indigo-300 text-indigo-800 shadow-sm";
+    }
+
+    sandboxAnswers = { surface: null, deep: null, feedback: null };
+    resetDiagBtnHighlight();
+
+    const c = DIAG_CASES.find(x => x.id === id);
+    if (c) {
+        document.getElementById("sandbox-sentence").innerText = c.sentence;
+        document.getElementById("sandbox-meaning").innerText = c.meaning;
+        document.getElementById("sandbox-lang").innerText = c.background;
+        document.getElementById("sandbox-severity").innerText = c.severity;
+        
+        document.getElementById("sandbox-result").classList.add("hidden");
+    }
+}
+
+function selectDiag(type, val) {
+    sandboxAnswers[type] = val;
+    highlightDiagBtns(type, val);
+}
+
+function highlightDiagBtns(type, val) {
+    const containerId = `ans-${type}-group`;
+    const buttons = document.querySelectorAll(`#${containerId} button`);
+    buttons.forEach(btn => {
+        if (btn.innerText.includes(val) || btn.innerHTML.includes(val)) {
+            btn.className = "diag-opt py-2 px-3 rounded-xl border text-xs text-left transition bg-emerald-500 text-slate-950 border-emerald-500 font-bold shadow-sm";
+        } else {
+            btn.className = "diag-opt py-2 px-3 rounded-xl border text-xs text-left transition bg-white border-slate-200 text-slate-700 hover:bg-slate-50";
+        }
+    });
+}
+
+function resetDiagBtnHighlight() {
+    document.querySelectorAll(".diag-opt").forEach(btn => {
+        btn.className = "diag-opt py-2 px-3 rounded-xl border text-xs text-center transition bg-white border-slate-200 text-slate-700 hover:bg-slate-50";
+    });
+}
+
+// --- STREAMING_CHUNK: 實踐偏誤診斷判定邏輯與即時反饋... -->
+function evaluateDiagnosis() {
+    const c = DIAG_CASES.find(x => x.id === activeCaseId);
+    if (!c) return;
+
+    if (!sandboxAnswers.surface || !sandboxAnswers.deep || !sandboxAnswers.feedback) {
+        showModalAlert("步驟未完成！", "請為『描述錯誤』、『成因分析』與『回饋決策』三步驟皆選擇對應選項再送出。");
+        return;
+    }
+
+    const isSurfaceCorrect = c.surface === sandboxAnswers.surface;
+    const isDeepCorrect = c.deep === sandboxAnswers.deep;
+    const isFeedbackCorrect = c.feedback === sandboxAnswers.feedback;
+
+    const resultBox = document.getElementById("sandbox-result");
+    resultBox.classList.remove("hidden");
+
+    if (isSurfaceCorrect && isDeepCorrect && isFeedbackCorrect) {
+        resultBox.className = "p-5 rounded-xl border text-xs space-y-2 bg-emerald-50 border-emerald-200 text-emerald-800";
+        resultBox.innerHTML = `
+            <div class="flex items-center space-x-2 font-bold text-sm">
+                <i data-lucide="check" class="w-5 h-5 text-emerald-600"></i>
+                <span>🎉 診斷完全正確！您已掌握該偏誤的核心學術解法！</span>
+            </div>
+            <p class="mt-2 leading-relaxed">${c.expl}</p>
+        `;
+    } else {
+        resultBox.className = "p-5 rounded-xl border text-xs space-y-2 bg-rose-50 border-rose-200 text-rose-800";
+        resultBox.innerHTML = `
+            <div class="flex items-center space-x-2 font-bold text-sm">
+                <i data-lucide="help-circle" class="w-5 h-5 text-rose-600"></i>
+                <span>您的診斷部分不符，建議對照學術規律：</span>
+            </div>
+            <ul class="list-disc pl-4 space-y-1 text-[11px]">
+                <li>表層描述：實際為 <span class="font-bold underline">${c.surface}</span> （您的選取: ${sandboxAnswers.surface} ${isSurfaceCorrect ? '✅' : '❌'}）</li>
+                <li>深層成因：實際為 <span class="font-bold underline">${c.deep}</span> （您的選取: ${sandboxAnswers.deep} ${isDeepCorrect ? '✅' : '❌'}）</li>
+                <li>回饋決策：實際為 <span class="font-bold underline">${c.feedback}</span> （您的選取: ${sandboxAnswers.feedback} ${isFeedbackCorrect ? '✅' : '❌'}）</li>
+            </ul>
+            <p class="mt-3 leading-relaxed text-slate-700 bg-white/60 p-2.5 rounded-lg border border-slate-100">
+                <strong>李永貞老師建議：</strong>${c.expl}
+            </p>
+        `;
+    }
+    lucide.createIcons();
+}
+
+// --- 3. SURVEY / LEARNER STYLE ASSESSMENT LOGIC ---
+function setSurveyScore(qId, val) {
+    surveyScores[qId] = val;
+    for (let i = 1; i <= 5; i++) {
+        const btn = document.getElementById(`survey-val-${qId}-${i}`);
+        if (btn) {
+            if (i === val) {
+                btn.className = "w-8 h-8 rounded-full text-xs font-bold border transition bg-indigo-600 text-white border-indigo-600 shadow-sm";
+            } else {
+                btn.className = "w-8 h-8 rounded-full text-xs font-bold border transition bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100";
+            }
+        }
+    }
+}
+
+function calculateProfile() {
+    const vis = parseFloat(surveyScores[1]) || 3;
+    const aud = parseFloat(surveyScores[2]) || 3;
+    const rw = parseFloat(surveyScores[3]) || 3;
+    const kin = parseFloat(surveyScores[4]) || 3;
+    const globalVal = parseFloat(surveyScores[5]) || 3;
+
+    const bars = [
+        { name: "👀 視覺感知 (Visual)", val: vis },
+        { name: "👂 聽覺編碼 (Auditory)", val: aud },
+        { name: "✍️ 讀寫思考 (Read/Write)", val: rw },
+        { name: "🏃 動覺體驗 (Kinesthetic)", val: kin },
+        { name: "🌍 整體取向 (Global Style)", val: globalVal }
+    ];
+
+    const container = document.getElementById("profile-bars-container");
+    container.innerHTML = "";
+    bars.forEach(b => {
+        const pct = (b.val / 5) * 100;
+        const color = b.val >= 4 ? 'bg-emerald-500' : b.val >= 2.5 ? 'bg-indigo-500' : 'bg-slate-400';
+        container.innerHTML += `
+            <div class="space-y-1">
+                <div class="flex justify-between text-[11px] font-semibold text-slate-700">
+                    <span>${b.name}</span>
+                    <span>${b.val.toFixed(1)} / 5</span>
+                </div>
+                <div class="w-full h-3 bg-slate-200 rounded-full overflow-hidden">
+                    <div class="h-full ${color} rounded-full" style="width: ${pct}%"></div>
+                </div>
+            </div>
+        `;
+    });
+
+    let highest = bars[0];
+    bars.forEach(b => { if (b.val > highest.val) highest = b; });
+
+    let recText = "";
+    if (highest.name.includes("視覺")) {
+        recText = "該生具備強烈『視覺感知偏好』。建議授課時常備：多重色卡分類（如名詞紅色、動詞藍色）、五度調值聲調輔助圖，以及將語句排版以卡牌心智圖形式列出。課堂操練切勿只用純聲音複述。";
+    } else if (highest.name.includes("聽覺")) {
+        recText = "該生具備卓越『聽覺語音編碼能力』。適合在課堂中進行：同儕即時口語答問、聽力辨義對抗、韻律順口溜（如：三聲變調連讀）。寫作前先安排小組聽辨或口頭演練，效益最高。";
+    } else if (highest.name.includes("讀寫")) {
+        recText = "該生依賴『讀寫思考』。不宜一味強推 TPR 動態遊戲。建議為其建立：明確的陳述性語法對照表、空白預留筆記本、課後自評填空表，並引導其在寫作前先寫下大提綱與結構關聯詞。";
+    } else if (highest.name.includes("動覺")) {
+        recText = "該生為典型的『動覺與任務取向者』。對死板的表格毫無任務耐心。教師務必設計：生活情境模擬（如：去夜市買點心）、實物操練、校園角色訪談與實體貼圖地圖佈置，使其在『動手解決問題』的過程中儲存新知識。";
+    } else {
+        recText = "該生運用多元後設認知與社會互動策略。學習主動性高，建議給予其『同儕鷹架』，安排其擔任拼圖閱讀法 (Jigsaw) 的組長，並鼓勵其建立個人發音錄音自評日記，發揮優勢。";
+    }
+
+    document.getElementById("profile-rec-text").innerText = recText;
+    lucide.createIcons();
+}
+
+// --- STREAMING_CHUNK: 實踐教案設計與匯出模組... -->
+// --- 4. SLA LESSON PLAN BUILDER LOGIC ---
+function loadSlaTemplate(type) {
+    document.querySelectorAll(".sla-tmpl-btn").forEach(btn => {
+        btn.className = "sla-tmpl-btn bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 px-4 py-2 rounded-xl text-xs transition";
+    });
+
+    const targetData = SLA_LESSON_TEMPLATES[type] || {
+        title: "自定義新語言點",
+        steps: [
+            { stage: "輸入 (Input)", rule: "可理解輸入", action: "請在此填入為學生創造的真實場景或多媒體展示..." },
+            { stage: "注意 (Noticing)", rule: "注意力假說", action: "請在此填入如何進行形式標示 or 正誤對比..." },
+            { stage: "控制操練", rule: "結構練習", action: "請在此填入高度受控的卡牌、填空或公式替換操練..." },
+            { stage: "有意義操練", rule: "情意融合", action: "請在此填入結合學生真實生活資訊的提問設計..." },
+            { stage: "任務輸出", rule: "資訊差任務", action: "請在此填入同儕合作、扮演或問題解決的輸出活動..." },
+            { stage: "中介語回饋", rule: "石化糾正", action: "請在此定義活動後的偏誤蒐集與複現回饋手段..." }
+        ]
+    };
+
+    document.getElementById("builder-grammar-title").value = targetData.title;
+
+    const listEl = document.getElementById("builder-steps-list");
+    listEl.innerHTML = "";
+
+    targetData.steps.forEach((s, idx) => {
+        listEl.innerHTML += `
+            <div class="lg:col-span-1 bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-3">
+                <div class="space-y-1">
+                    <span class="text-[10px] bg-slate-100 text-slate-500 font-bold px-2 py-0.5 rounded uppercase">步驟 ${idx+1}</span>
+                    <h6 class="font-extrabold text-slate-900 text-xs">${s.stage}</h6>
+                    <span class="text-[9px] text-emerald-600 font-semibold block">${s.rule}</span>
+                </div>
+                <textarea class="text-xs text-slate-600 bg-slate-50/50 hover:bg-white focus:bg-white border border-slate-100 rounded p-2 focus:outline-emerald-500 w-full resize-none" rows="5">${s.action}</textarea>
+            </div>
+        `;
+    });
+}
+
+// --- STREAMING_CHUNK: 實踐 24 題教育部考題核心篩選器... -->
+// --- 5. QUIZ EXAM SYSTEM LOGIC ---
+function filterExam(year) {
+    activeFilter = year;
+    
+    // Highlight category filter buttons
+    document.querySelectorAll(".exam-filter-btn").forEach(btn => {
+        btn.className = "exam-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition";
+    });
+    
+    const activeBtn = document.getElementById(`filter-exam-${year}`);
+    if (activeBtn) {
+        activeBtn.className = "exam-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 text-white shadow transition";
+    }
+
+    if (year === "all") {
+        filteredQuestions = [...QUIZ_QUESTIONS];
+    } else {
+        filteredQuestions = QUIZ_QUESTIONS.filter(q => q.year === year);
+    }
+
+    activeQuizIndex = 0;
+    renderQuizPager();
+    if (filteredQuestions.length > 0) {
+        loadQuizQuestion(0);
+    } else {
+        document.getElementById("quiz-active-card").innerHTML = "<p class='text-slate-500 text-xs'>此年度目前無題庫加載。</p>";
+    }
+}
+
+function renderQuizPager() {
+    const pager = document.getElementById("quiz-pager");
+    pager.innerHTML = "";
+    filteredQuestions.forEach((q, idx) => {
+        const globalIdx = QUIZ_QUESTIONS.findIndex(item => item.id === q.id);
+        const isAnswered = quizUserAnswers[globalIdx] !== null;
+        let btnStyle = "bg-white text-slate-700 border-slate-200 hover:bg-slate-50";
+        
+        if (idx === activeQuizIndex) {
+            btnStyle = "bg-indigo-600 text-white border-indigo-600 shadow-md";
+        } else if (isAnswered) {
+            const isCorrect = quizUserAnswers[globalIdx] === q.correct;
+            btnStyle = isCorrect ? "bg-emerald-50 text-emerald-700 border-emerald-300" : "bg-rose-50 text-rose-700 border-rose-300";
+        }
+
+        pager.innerHTML += `
+            <button onclick="loadQuizQuestion(${idx})" id="quiz-btn-${idx}" class="w-10 h-10 rounded-xl border text-xs font-bold transition flex items-center justify-center ${btnStyle}">
+                ${idx + 1}
+            </button>
+        `;
+    });
+}
+
+function loadQuizQuestion(index) {
+    activeQuizIndex = index;
+    renderQuizPager();
+
+    const q = filteredQuestions[index];
+    const globalIdx = QUIZ_QUESTIONS.findIndex(item => item.id === q.id);
+    
+    document.getElementById("quiz-active-num").innerText = `精選試題 Q${index + 1}`;
+    
+    let sourceText = "2026樹德科大獨家學術檢核題";
+    if (q.year !== "new") {
+        sourceText = `教育部對外華語教學能力認證考試真題 (${q.year}年)`;
+    }
+    document.getElementById("quiz-source").innerText = `試題來源：${sourceText}`;
+    document.getElementById("quiz-active-question").innerText = q.q;
+
+    const optsGroup = document.getElementById("quiz-options-group");
+    optsGroup.innerHTML = "";
+
+    const keys = ["A", "B", "C", "D"];
+    const optTexts = [q.a, q.b, q.c, q.d];
+
+    keys.forEach((k, oIdx) => {
+        const optionVal = k.toLowerCase();
+        let btnClass = "w-full text-left p-4 rounded-xl border text-xs transition duration-150 bg-white border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300";
+        
+        if (quizUserAnswers[globalIdx] !== null) {
+            if (optionVal === q.correct) {
+                btnClass = "w-full text-left p-4 rounded-xl border text-xs transition duration-150 bg-emerald-50 border-emerald-400 text-emerald-800 font-bold";
+            } else if (quizUserAnswers[globalIdx] === optionVal) {
+                btnClass = "w-full text-left p-4 rounded-xl border text-xs transition duration-150 bg-rose-50 border-rose-400 text-rose-800 font-bold";
+            } else {
+                btnClass = "w-full text-left p-4 rounded-xl border text-xs transition duration-150 bg-slate-50 border-slate-200 text-slate-400 cursor-not-allowed";
+            }
+        }
+
+        optsGroup.innerHTML += `
+            <button onclick="submitQuizAnswer('${optionVal}')" ${quizUserAnswers[globalIdx] !== null ? 'disabled' : ''} class="${btnClass}">
+                <strong class="text-indigo-600 font-bold mr-1.5">(${k})</strong> ${optTexts[oIdx]}
+            </button>
+        `;
+    });
+
+    const expCard = document.getElementById("quiz-explanation-card");
+    if (quizUserAnswers[globalIdx] !== null) {
+        expCard.classList.remove("hidden");
+        const isUserCorrect = quizUserAnswers[globalIdx] === q.correct;
+        expCard.className = `p-4 rounded-xl border text-xs space-y-1.5 ${isUserCorrect ? 'bg-emerald-50/50 border-emerald-100 text-emerald-800' : 'bg-rose-50/50 border-rose-100 text-rose-800'}`;
+        expCard.innerHTML = `
+            <div class="flex items-center space-x-1.5 font-bold text-sm">
+                <i data-lucide="${isUserCorrect ? 'check-circle' : 'x-circle'}" class="w-4 h-4"></i>
+                <span>您的作答：${quizUserAnswers[globalIdx].toUpperCase()} （標準答案：${q.correct.toUpperCase()}）</span>
+            </div>
+            <p class="text-slate-600 leading-relaxed"><strong class="text-slate-800 font-semibold block mb-0.5">學術深度解析：</strong>${q.expl}</p>
+        `;
+    } else {
+        expCard.classList.add("hidden");
+    }
+    
+    lucide.createIcons();
+    updateQuizProgress();
+}
+
+function submitQuizAnswer(choice) {
+    const q = filteredQuestions[activeQuizIndex];
+    const globalIdx = QUIZ_QUESTIONS.findIndex(item => item.id === q.id);
+    
+    if (quizUserAnswers[globalIdx] !== null) return; 
+    quizUserAnswers[globalIdx] = choice;
+
+    loadQuizQuestion(activeQuizIndex);
+}
+
+function updateQuizProgress() {
+    let answeredCount = 0;
+    let correctCount = 0;
+    
+    QUIZ_QUESTIONS.forEach((ans, idx) => {
+        if (quizUserAnswers[idx] !== null) {
+            answeredCount++;
+            if (quizUserAnswers[idx] === QUIZ_QUESTIONS[idx].correct) {
+                correctCount++;
+            }
+        }
+    });
+
+    const percent = answeredCount > 0 ? Math.round((correctCount / answeredCount) * 100) : 0;
+    document.getElementById("exam-progress-text").innerText = `${answeredCount} / ${QUIZ_QUESTIONS.length}`;
+    document.getElementById("exam-score-percent").innerText = `${percent}%`;
+
+    if (answeredCount === QUIZ_QUESTIONS.length) {
+        document.getElementById("exam-certificate").classList.remove("hidden");
+        document.getElementById("cert-score").innerText = `${percent}分`;
+    } else {
+        document.getElementById("exam-certificate").classList.add("hidden");
+    }
+}
+
+function resetAllProgress() {
+    quizUserAnswers = Array(QUIZ_QUESTIONS.length).fill(null);
+    sandboxAnswers = { surface: null, deep: null, feedback: null };
+    activeCaseId = "case1";
+
+    initApp();
+    switchTab("slides");
+    switchSlideUnit(1);
+    showModalAlert("重設成功", "所有做答數據、診斷進度及風格量表已重設回原廠設置。");
+}
+
+// --- STREAMING_CHUNK: 實踐 SLA AI 即時智慧探測與回傳模組... -->
+// --- 6. AI SLA ASSISTANT (GEMINI INTEGRATION) ---
+function fillAssistantPrompt(val) {
+    if (val) {
+        document.getElementById("ai-user-query").value = val;
+    }
+}
+
+async function askSlaAi() {
+    const queryText = document.getElementById("ai-user-query").value.trim();
+    const apiKey = document.getElementById("ai-api-key").value.trim();
+
+    if (!queryText) {
+        showModalAlert("請輸入內容", "請先輸入您的教學困境描述或學生的偏誤句子再發起 AI 診斷。");
+        return;
+    }
+
+    const outputBox = document.getElementById("ai-output-box");
+    const submitBtn = document.getElementById("ai-submit-btn");
+
+    outputBox.innerHTML = `
+        <div class="flex items-center space-x-2 text-emerald-400 animate-pulse">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+            <span>// 正在讀取二語習得 SLA 講義模型庫...</span>
+        </div>
+        <p class="text-slate-500">// 正對比：第一語言負遷移、中介語石化與 U 型發展特徵...</p>
+        <p class="text-slate-500">// 調用 AI 引擎分析中，請稍候 3~5 秒...</p>
+    `;
+    submitBtn.disabled = true;
+    submitBtn.className = "w-full bg-slate-800 text-slate-500 py-3 rounded-xl cursor-not-allowed text-xs";
+
+    const systemPrompt = `你是一位世界級的第二語言習得 (SLA) 與對外華語教學專家、華語師資培訓權威。
+請針對使用者輸入的學生華語偏誤、教學狀況或教材問題，提供深度、結構化的專業分析。
+你的分析必須包含以下四個板塊：
+1. 【中介語與偏誤分析診斷】：表層分類（遺漏、誤加、錯序或誤選）及深層成因分析（語際負遷移、語內過度推廣、發展性或教學誘發原因）。
+2. 【二語習得理論對接】：連結一至多個經典 SLA 理論（例如：Krashen 情意過濾/輸入假說、Swain 輸出假說、Schmidt 注意力假說、McLaughlin 受控/自動化、或 ZPD 鷹架理論），說明其習得心理機制。
+3. 【華語課堂再教學設計】：基於 7.1 節設計框架，具體給出包含「輸入 (Input) - 注意形式 (Noticing) - 控制與有意義操練 - 任務輸出」的步驟。
+4. 【擬真師生引導對話】：設計 2~3 個師生互動對話輪次，展示如何以「重述 (Recast)」或「提示 (Elicitation)」方式不著痕跡地幫助學生自我修復。
+請保持專業、親切、結構清晰且用字嚴謹的學術及實務兼備風格。`;
+
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+
+    const payload = {
+        contents: [{ parts: [{ text: queryText }] }],
+        systemInstruction: {
+            parts: [{ text: systemPrompt }]
+        }
+    };
+
+    try {
+        let response = await fetchWithRetry(apiUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+        const candidateText = result.candidates?.[0]?.content?.parts?.[0]?.text;
+
+        if (candidateText) {
+            outputBox.innerHTML = formatMarkdown(candidateText);
+        } else {
+            throw new Error("沒有返回有效數據");
+        }
+    } catch (error) {
+        console.error(error);
+        outputBox.innerHTML = `
+            <div class="p-3 bg-rose-950/50 border border-rose-900 rounded-xl space-y-2 text-rose-300">
+                <p class="font-bold flex items-center gap-1.5"><i data-lucide="x-circle" class="w-4 h-4"></i> // 連線逾時或 API 金鑰未填</p>
+                <p class="text-xs leading-relaxed">華語二語診斷室啟動了本機離線 SLA 智囊模擬庫提供您即時教學解析：</p>
+            </div>
+            
+            <div class="mt-4 space-y-4 leading-relaxed text-xs">
+                <div>
+                    <h5 class="font-bold text-amber-400">1. 【中介語與偏誤分析診斷】</h5>
+                    <p class="text-slate-300">此現象典型屬於「錯序與誤選偏誤」。由於目的語與母語（如英語、日語）中地點、時間結構之底層差異。在學生進行自由任務輸出時，工作記憶資源用盡，產生典型的迴避或結構性負遷移。</p>
+                </div>
+                <div>
+                    <h5 class="font-bold text-amber-400">2. 【二語習得理論對接】</h5>
+                    <p class="text-slate-300">這反映了 Schmidt「注意力假說 (Noticing)」中：學生平時只將注意力集中在語詞的語義，而「忽略了形式功能連結」。因此，雖然輸入了多次，依然無法順利「儲存 (Intake)」。</p>
+                </div>
+                <div>
+                    <h5 class="font-bold text-amber-400">3. 【擬真師生重述糾偏法】</h5>
+                    <p class="text-slate-400 font-mono">生：「老師，我明天吃飯在餐廳。」</p>
+                    <p class="text-emerald-400 font-mono">師（重述）：「喔！你明天要在餐廳吃飯啊。你想吃什麼菜？」</p>
+                </div>
+            </div>
+        `;
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.className = "w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold py-3 rounded-xl transition shadow flex items-center justify-center space-x-2";
+        lucide.createIcons();
+    }
+}
+
+// Exponential Backoff Fetch
+async function fetchWithRetry(url, options, retries = 3, delay = 1000) {
+    try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+            if (response.status === 429 && retries > 0) {
+                await new Promise(resolve => setTimeout(resolve, delay));
+                return fetchWithRetry(url, options, retries - 1, delay * 2);
+            }
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response;
+    } catch (e) {
+        if (retries > 0) {
+            await new Promise(resolve => setTimeout(resolve, delay));
+            return fetchWithRetry(url, options, retries - 1, delay * 2);
+        }
+        throw e;
+    }
+}
+
+function formatMarkdown(text) {
+    return text
+        .replace(/\n\n/g, '<br/><br/>')
+        .replace(/\n/g, '<br/>')
+        .replace(/\*\*(.*?)\*\*/g, '<strong class="text-emerald-400 font-bold">$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em class="text-slate-300">$1</em>')
+        .replace(/### (.*?)(<br\/>|$)/g, '<h5 class="text-amber-400 font-bold text-sm mt-3 mb-1">$1</h5>')
+        .replace(/## (.*?)(<br\/>|$)/g, '<h4 class="text-emerald-300 font-black text-sm mt-4 border-b border-slate-800 pb-1">$1</h4>');
+}
+
+// STAGE_DETAILS Database
+const STAGE_DETAILS = {
+    1: {
+        title: "第一階段：蜜月階段 (Honeymoon Period)",
+        badge: "學習初期",
+        desc: "對新語言與環境充滿強烈好奇心與熱情，願意模仿跟讀，簡單日常句子進步很快。興奮自信度高，焦慮感尚未完全浮現。可能問題是容易以為華語可輕易掌握，尚未建立穩定的學習技能。",
+        action: "建立固定學習流程與自學策略。多給予清楚、短小、可重複之高頻語塊輸入（例如點餐：我要一杯珍珠奶茶，初級階段不宜大講複雜的偏誤與文法術語，以維持高動機）。"
+    },
+    2: {
+        title: "第二階段：文化衝擊階段 (Culture Shock Period)",
+        badge: "新鮮感下降",
+        desc: "新鮮感消退，開始面對真實生活與表達壓力。發現課堂上會的句子，到了生活環境中因臺灣人自然語速、口語化、捷運公告等聽不懂、看不懂。出現挫折、焦慮，開始缺交作業、逃避或拒絕在課堂開口說話。",
+        action: "整理生活真實語料，在課堂引導跨文化語用策略（例如：求助說法、確認理解說法、詢問說法）。回饋多採用情意安撫，降低其『情意過濾器』，建立班級安全感。"
+    },
+    3: {
+        title: "第三階段：初步適應階段 (Initial Adjustment Period)",
+        badge: "常規建立",
+        desc: "已掌握基本生活華語與常用句式，能在熟悉的情境中完成簡單任務。自信度增加，但一旦涉及到複雜話題、表達立場、說明因果關係、或面臨中高級語篇時便顯得吃力不順。",
+        action: "避免學生只停留在簡單重複自我介紹或旅遊等主題。應在教學活動中逐步、系統性地加入：說明原因、對比例證、因果、優缺點分析與反駁支架，推動其邁向段落篇章表達。"
+    },
+    4: {
+        title: "第四階段：心理孤立階段 (Mental Isolation Period)",
+        badge: "高原停滯期",
+        desc: "常出現在中級以後，感覺進步緩慢。日常生活溝通可行，但想交朋友卻無法深入聊天或閱讀專業學術資料時感到詞彙句型極度匱乏。容易出現學習停滯感、孤獨感、學習疲憊與『高原期』，為了保持正確率而大量使用『迴避策略』。",
+        action: "結合『推動輸出 (Pushed Output)』與『形式注意 (Focus on Form)』。設計具有高度溝通壓力、必須使用新學語法或高難度詞彙才能完成的『資訊差協作任務』，打破其中介語石化與停滯性。"
+    },
+    5: {
+        title: "第五階段：融合階段 (Acceptance and Integration Period)",
+        badge: "雙文化融合",
+        desc: "能較為自然地融入目的語社會。不只會說中文，更能依據溝通對象、權力關係、正式場合調整語體、客套度與語氣。理解部分本土幽默、台語借詞或雙關語，具備極強的自我監控與自主修正能力。",
+        action: "不需只教授零散生詞，著重於篇章組織、修辭語氣、立場表達、資料引用與跨文化觀點。引導學生進行正式演說、學術摘要與長篇論述寫作。"
+    }
+};
+</script>
+</body>
+</html>
