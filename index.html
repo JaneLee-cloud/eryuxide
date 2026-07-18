@@ -896,7 +896,7 @@
                     <div class="p-1.5 bg-emerald-50 text-emerald-600 rounded-lg"><i data-lucide="bot" class="w-5 h-5"></i></div>
                     <div>
                         <h4 class="text-lg font-bold text-slate-900">SLA 華語教學智囊 AI 助理</h4>
-                        <p class="text-xs text-slate-500">可直接輸入學生的偏誤句子、特定母語背景教學困境，取得精確的理論剖析與擬真引導詞！</p>
+                        <p class="text-xs text-slate-500">可輸入語言課課文、教材段落或學生文本，取得七大面向的教學評析、勘誤表與練習模版！</p>
                     </div>
                 </div>
 
@@ -915,23 +915,23 @@
                     <!-- Left inputs -->
                     <div class="lg:col-span-1 space-y-4">
                         <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">1. 選擇偏誤預設案例：</label>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">1. 選擇分析預設案例：</label>
                             <select onchange="fillAssistantPrompt(this.value)" class="w-full text-xs border border-slate-200 rounded-xl px-3 py-2 bg-white focus:outline-emerald-500">
                                 <option value="">-- 手動自行輸入 --</option>
-                                <option value="日語母語者常把『去臺北』說成『去過臺北』，且與時貌助詞『了』严重混淆">日籍學生：了 vs 過</option>
-                                <option value="英語母語者寫出：『我昨天跟媽媽打了電話三小時。』分析時態、數量詞錯序">英籍學生：動作持續時間語序</option>
-                                <option value="越南籍學生，一到四聲容易唱讀，尤其分辨不清二聲與三聲。該如何利用語音對比與注意力假說設計？">越籍學生：二聲與三聲調值不準</option>
+                                <option value="課文：我昨天去夜市。我吃很多好吃的東西。夜市很熱鬧，所以我很喜歡臺灣文化。">初級課文：夜市經驗</option>
+                                <option value="課文：近年來，許多城市積極推動公共自行車系統。這不但降低交通壅塞，也讓市民養成運動習慣。然而，若缺乏完善的維修與停放管理，便利的政策也可能造成新的城市問題。">中級課文：公共自行車</option>
+                                <option value="課文：語言不只是溝通工具，更承載社會身份與文化記憶。當學習者進入新的語言社群時，他們往往同時經歷語言形式、互動規範與價值觀的重新協商。">高級課文：語言與身份</option>
                             </select>
                         </div>
 
                         <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">2. 教學困境與錯句描述：</label>
-                            <textarea id="ai-user-query" rows="5" placeholder="例如：學生寫出『*我被中文很難』，應如何以偏誤分析表層遺漏、誤加與過度類化理論，為其設計再教學引導？" class="w-full text-xs border border-slate-200 rounded-xl p-3 focus:outline-emerald-500 bg-white"></textarea>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">2. 課文或教材內容：</label>
+                            <textarea id="ai-user-query" rows="5" placeholder="請貼上需要評析的語言課課文、教材段落或學生文本。" class="w-full text-xs border border-slate-200 rounded-xl p-3 focus:outline-emerald-500 bg-white"></textarea>
                         </div>
 
                         <button onclick="askSlaAi()" id="ai-submit-btn" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold py-3 rounded-xl transition shadow flex items-center justify-center space-x-2">
                             <i data-lucide="sparkles" class="w-4 h-4"></i>
-                            <span>AI 即時分析診斷</span>
+                            <span>AI 課文教學評析</span>
                         </button>
                     </div>
 
@@ -951,7 +951,7 @@
 
                         <div class="flex-1 overflow-y-auto max-h-[350px] pr-2 text-xs font-mono space-y-4" id="ai-output-box">
                             <p class="text-slate-400">// 等待輸入教學案例中...</p>
-                            <p class="text-slate-400">// 請在左側輸入或選擇問題，並點選「AI 即時分析診斷」按鈕。</p>
+                            <p class="text-slate-400">// 請在左側輸入或選擇問題，並點選「AI 課文教學評析」按鈕。</p>
                         </div>
 
                         <div class="border-t border-slate-800 pt-3 mt-4 text-[10px] text-slate-500 flex justify-between items-center">
@@ -1868,7 +1868,7 @@ async function askSlaAi() {
     const apiKey = document.getElementById("ai-api-key").value.trim();
 
     if (!queryText) {
-        showModalAlert("請輸入內容", "請先輸入您的教學困境描述或學生的偏誤句子再發起 AI 診斷。");
+        showModalAlert("請輸入內容", "請先輸入需要分析的語言課課文、教材段落或學生文本。");
         return;
     }
 
@@ -1878,22 +1878,45 @@ async function askSlaAi() {
     outputBox.innerHTML = `
         <div class="flex items-center space-x-2 text-emerald-400 animate-pulse">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-            <span>// 正在讀取二語習得 SLA 講義模型庫...</span>
+            <span>// 正在讀取語言教學評析框架...</span>
         </div>
-        <p class="text-slate-500">// 正對比：第一語言負遷移、中介語石化與 U 型發展特徵...</p>
-        <p class="text-slate-500">// 調用 AI 引擎分析中，請稍候 3~5 秒...</p>
+        <p class="text-slate-500">// 正進行：教學重點、篇章邏輯、精確性、語言與跨文化檢視...</p>
+        <p class="text-slate-500">// 調用 AI 引擎產生七段式教學評析，請稍候 3~5 秒...</p>
     `;
     submitBtn.disabled = true;
     submitBtn.className = "w-full bg-slate-800 text-slate-500 py-3 rounded-xl cursor-not-allowed text-xs";
 
-    const systemPrompt = `你是一位世界級的第二語言習得 (SLA) 與對外華語教學專家、華語師資培訓權威。
-請針對使用者輸入的學生華語偏誤、教學狀況或教材問題，提供深度、結構化的專業分析。
-你的分析必須包含以下四個板塊：
-1. 【中介語與偏誤分析診斷】：表層分類（遺漏、誤加、錯序或誤選）及深層成因分析（語際負遷移、語內過度推廣、發展性或教學誘發原因）。
-2. 【二語習得理論對接】：連結一至多個經典 SLA 理論（例如：Krashen 情意過濾/輸入假說、Swain 輸出假說、Schmidt 注意力假說、McLaughlin 受控/自動化、或 ZPD 鷹架理論），說明其習得心理機制。
-3. 【華語課堂再教學設計】：基於 7.1 節設計框架，具體給出包含「輸入 (Input) - 注意形式 (Noticing) - 控制與有意義操練 - 任務輸出」的步驟。
-4. 【擬真師生引導對話】：設計 2~3 個師生互動對話輪次，展示如何以「重述 (Recast)」或「提示 (Elicitation)」方式不著痕跡地幫助學生自我修復。
-請保持專業、親切、結構清晰且用字嚴謹的學術及實務兼備風格。`;
+    const systemPrompt = `你是一位專業的語言教學分析專家，熟悉第二語言習得、教材編寫、篇章分析、語用學與跨文化溝通。
+請對使用者輸入的語言課課文、教材段落或學生文本進行全面、系統且可直接用於課堂的教學評析。
+
+請嚴格按照以下七個部分輸出，標題需清楚、可供教師快速查閱：
+
+一、【教學重點分析】
+識別課文中適合語言學習者掌握的核心語言現象、文法結構與表達方式；說明其在實際溝通中的應用價值；並逐項標註難度等級（初級、中級、高級），協助教師分層教學。
+
+二、【篇章邏輯與結構分析】
+梳理課文的組織方式、段落間邏輯關係（如因果、遞進、對比、轉折、例證等）、論證方法與敘事順序；評估其清晰度與有效性；指出是否有邏輯斷裂或不連貫之處。
+
+三、【內容精確性檢查】
+指出課文中的事實性錯誤、邏輯矛盾、過度簡化或不精確表述；提供更準確、更完整的改寫版本；特別標明可能影響學習者理解的誤導性表述。
+
+四、【語言使用分析】
+檢視詞彙選擇、句式結構、詞語搭配、語體風格是否恰當得體；指出具體語言錯誤、不自然表達或風格不一致之處；提出具體改進建議與更佳替代表達。
+
+五、【跨文化溝通檢視】
+識別可能引發文化誤解的表述、隱含的文化特定假設或不同文化背景下的理解偏差；提出澄清、補充背景或調整措辭的建議，幫助學習者避免跨文化溝通障礙。
+
+六、【逐句勘誤表】
+用 Markdown 表格列出需要改正或優化的內容，表格欄位必須為：「原文｜問題描述｜改正版本｜改正理由」。若原文沒有明顯錯誤，也請列出可優化的教學版本。
+
+七、【段落表達練習模版】
+提取可直接用於學習者練習的句式、段落框架或表達模式；標明難度等級（初級、中級、高級）；說明每個模版的應用語境，方便教師設計延伸口語、寫作與改寫訓練。
+
+整體輸出要求：
+- 使用繁體中文。
+- 給出具體例句、改寫句與課堂操作建議。
+- 若原文資訊不足，請明確標示「需補充背景」並提出教師可追問的問題。
+- 保持專業、精確、友善且高度可操作的教學顧問風格。`;
 
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
 
@@ -1924,22 +1947,22 @@ async function askSlaAi() {
         outputBox.innerHTML = `
             <div class="p-3 bg-rose-950/50 border border-rose-900 rounded-xl space-y-2 text-rose-300">
                 <p class="font-bold flex items-center gap-1.5"><i data-lucide="x-circle" class="w-4 h-4"></i> // 連線逾時或 API 金鑰未填</p>
-                <p class="text-xs leading-relaxed">華語二語診斷室啟動了本機離線 SLA 智囊模擬庫提供您即時教學解析：</p>
+                <p class="text-xs leading-relaxed">語言教學評析室啟動本機離線模擬庫，提供您即時課文教學解析：</p>
             </div>
             
             <div class="mt-4 space-y-4 leading-relaxed text-xs">
                 <div>
-                    <h5 class="font-bold text-amber-400">1. 【中介語與偏誤分析診斷】</h5>
-                    <p class="text-slate-300">此現象典型屬於「錯序與誤選偏誤」。由於目的語與母語（如英語、日語）中地點、時間結構之底層差異。在學生進行自由任務輸出時，工作記憶資源用盡，產生典型的迴避或結構性負遷移。</p>
+                    <h5 class="font-bold text-amber-400">1. 【教學重點分析】</h5>
+                    <p class="text-slate-300">可先鎖定課文中的核心句型、關鍵詞彙與篇章連接詞，依「初級：可直接套用」、「中級：需比較語境」、「高級：需分析立場與語體」分層設計練習。</p>
                 </div>
                 <div>
-                    <h5 class="font-bold text-amber-400">2. 【二語習得理論對接】</h5>
-                    <p class="text-slate-300">這反映了 Schmidt「注意力假說 (Noticing)」中：學生平時只將注意力集中在語詞的語義，而「忽略了形式功能連結」。因此，雖然輸入了多次，依然無法順利「儲存 (Intake)」。</p>
+                    <h5 class="font-bold text-amber-400">2. 【語言與篇章使用分析】</h5>
+                    <p class="text-slate-300">建議檢查段落是否有清楚的時間、因果、轉折或遞進關係；若句子之間只靠主題相連，教師可引導學生補入「因此、然而、同時、例如」等連接語。</p>
                 </div>
                 <div>
-                    <h5 class="font-bold text-amber-400">3. 【擬真師生重述糾偏法】</h5>
-                    <p class="text-slate-400 font-mono">生：「老師，我明天吃飯在餐廳。」</p>
-                    <p class="text-emerald-400 font-mono">師（重述）：「喔！你明天要在餐廳吃飯啊。你想吃什麼菜？」</p>
+                    <h5 class="font-bold text-amber-400">3. 【逐句勘誤與練習模版】</h5>
+                    <p class="text-slate-400 font-mono">原句：「我昨天去夜市。我吃很多好吃的東西。」</p>
+                    <p class="text-emerald-400 font-mono">優化：「我昨天去了夜市，吃了很多好吃的東西。」可延伸模版：「我去了___，也___。」</p>
                 </div>
             </div>
         `;
